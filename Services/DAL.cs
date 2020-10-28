@@ -16,7 +16,7 @@ namespace Recreation.Services
 
         public DAL(IConfiguration config)
         {
-            db = new SqlConnection(config.GetConnectionString("kathryn"));
+            db = new SqlConnection(config.GetConnectionString("Connection"));
         }
 
         public List<ActivityData> GetActivityDataList()
