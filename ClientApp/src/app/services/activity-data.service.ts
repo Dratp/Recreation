@@ -14,6 +14,10 @@ export class ActivityDataService {
 
   getActivityDataList(): Observable<ActivityData[]>{
     return (this.http.get<ActivityData[]>(this.apiUrl));
+  }
+  
+  getActivityByLocation(activityname): Observable<ActivityData[]>{
+    return (this.http.get<ActivityData[]>(`${this.apiUrl}/${activityname}`));
 
 }
 }

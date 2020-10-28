@@ -11,6 +11,7 @@ import { ActivityDataService } from '../services/activity-data.service';
 export class ActivityComponent {
     activities: ActivityData[];
     activity : ActivityData;
+    activityname : string;
   
   constructor (private activitydataservice: ActivityDataService ) {}
   
@@ -23,5 +24,10 @@ export class ActivityComponent {
       activities => (this.activities = activities));
   }
   
+  getActivityByLocation(activityname){
+      //return list of activites from service call.
+      this.activitydataservice.getActivityByLocation(activityname).subscribe(
+        activities => (this.activities = activities));
+  }
   
   }
