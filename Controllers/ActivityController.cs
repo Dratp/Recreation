@@ -20,11 +20,48 @@ namespace Recreation.Controllers
         }
 
         [HttpGet]
-        [Route("")]
+        [Route("")] // api/Activity   Returns the full list of all activities
         public List<ActivityData> GetActivityData()
         {
             return db.GetActivityDataList();
         }
+
+        [HttpGet]
+        [Route("{activity}")] // api/Activity/(Variable)  : Returns all places that have a certain activity available
+        public List<ActivityData> GetActivityDataByActivity(string activity)
+        {
+            List<ActivityData> actByAct = db.GetActivityDataList();
+            List<ActivityData> goodstuff = new List<ActivityData>();
+            
+            foreach(ActivityData act in actByAct)
+            {
+                if(act.Activity == activity)
+                {
+                    goodstuff.Add(act);
+                }
+            }
+
+            return goodstuff;
+        }
+
+        [HttpGet]
+        [Route("{activity}/Number")] // api/Activity/(Variable)  : Returns all places that have a certain activity available
+        public int GetActivityDataByActivityNum(string activity)
+        {
+            List<ActivityData> actByAct = db.GetActivityDataList();
+            List<ActivityData> goodstuff = new List<ActivityData>();
+
+            foreach (ActivityData act in actByAct)
+            {
+                if (act.Activity == activity)
+                {
+                    goodstuff.Add(act);
+                }
+            }
+
+            return goodstuff.Count;
+        }
+
 
     }
 }
