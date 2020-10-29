@@ -41,6 +41,7 @@ namespace Recreation.Services
             return user;
         }
 
+        
 
         public List<ActivityData> GetActivityDataList()
         {
@@ -49,11 +50,57 @@ namespace Recreation.Services
         }
 
 
-        public List<Likes> GetLikes(long userID)
+
+
+
+        public List<Likes> GetLikes(long userID, long activityID)
         {
             List<Likes> data = db.Query<Likes>($"SELECT * FROM [Likes] WHERE UserID = {userID}").AsList<Likes>();
+            
+            foreach(Likes like in data)
+            {
+                if(activityID == like.RIDBActivity)
+                {
+                    DeleteLike(like);
+                    data.Remove(like);
+                    return data;
+                }
+
+
+            }
+
+            long id = AddLike(userID,activityID);
+            data.Add(new Likes() { 
+                ID = id,
+                UserID = userID,
+                RIDBActivity = activityID 
+            }
+            );
+
+
+
             return data;
         }
+
+        public long AddLike(long userID, long activityID)
+        {
+            Likes like = new Likes()
+            {
+                UserID = userID,
+                RIDBActivity = activityID
+            };
+
+            long id = db.Insert(like);
+
+            return id;
+        }
+
+        public void DeleteLike(Likes like)
+        {
+            db.Delete(like);
+        }
+
+
 
         public User GetUser(string userName)
         {

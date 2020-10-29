@@ -14,9 +14,12 @@ namespace Recreation.Services
 
         public Object Login(string userName, string password);
 
-        public List<Likes> GetLikes(long userID);
+        public List<Likes> GetLikes(long userID, long activityID);
 
         public User GetUser(string userName);
 
+        public long AddLike(long userID, long activityID);
+
+        public void DeleteLike(Likes like);
     }
 }
