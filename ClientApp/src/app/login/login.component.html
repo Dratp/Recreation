@@ -1,0 +1,48 @@
+<div class="center">
+  <h1>Please log in:</h1>
+  <br />
+  <fieldset class="pageLayout">
+    <ng-container *ngIf="!user.username">
+      <input #nameBox type="text" placeholder="Username" required />
+      <br />
+      <br />
+      <input #passBox type="password" placeholder="Password" required />
+      <br />
+      <br />
+      <button (click)="login(nameBox.value, passBox.value)">Login</button>
+    </ng-container>
+  </fieldset>
+  <br />
+  <br />
+  <h1>Or Create a new profile:</h1>
+  <br />
+  <fieldset class="pageLayout">
+    <ng-container *ngIf="!user.username">
+      <input #firstNameBox type="text" placeholder="First Name" required />
+      <br />
+      <br />
+      <input #lastNameBox type="text" placeholder="Last Name" required />
+      <br />
+      <br />
+      <input #cityBox type="text" placeholder="City" required />
+      <br />
+      <br />
+      <input #stateBox type="text" placeholder="State" required />
+      <br />
+      <br />
+      <input #zipBox type="number" placeholder="Zip Code" required />
+      <br />
+      <br />
+      <input #newUserNameBox type="text" placeholder="User Name" required />
+      <br />
+      <br />
+      <input #passBox type="password" placeholder="Password" required />
+      <br />
+      <br />
+      <input type="password" placeholder="Verify Password" required />
+      <br />
+      <br />
+      <button (click)="createUser(firstNameBox.value, lastNameBox.value, cityBox.value, stateBox.value, zipBox.value, newUserNameBox.value, passBox.value)">Create Profile</button>
+    </ng-container>
+  </fieldset>
+</div>
