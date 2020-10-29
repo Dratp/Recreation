@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace Recreation.Services
@@ -56,9 +57,16 @@ namespace Recreation.Services
 
         public User GetUser(string userName)
         {
-            User user = db.QuerySingle<User>($"SELECT * FROM [Users] WHERE UserName = {userName}");
+            try
+            {
+                User user = db.QuerySingle<User>($"SELECT * FROM [Users] WHERE UserName = '{userName}'");
+                return user;
+            }
+            catch { 
+                User user = new User();
+                return user;
+            }
 
-            return user;
         }
 
         public object Login(string userName, string password)
@@ -80,6 +88,8 @@ namespace Recreation.Services
             }
 
         }
+
+
 
     }
 }

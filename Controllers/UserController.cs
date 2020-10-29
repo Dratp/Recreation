@@ -30,7 +30,7 @@ namespace Recreation.Controllers
         }
 
         [HttpGet]
-        [Route("login")]
+        [Route("login/{userName}/{password}")]
         public object Login(string userName, string password)
         {
             return db.Login(userName, password);
