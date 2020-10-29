@@ -12,7 +12,6 @@ namespace Recreation.Models
         [Key]
         public long ID { get; set; }
         public long UserID { get; set; }
-        
         public long RIDBActivity { get; set; }
 
     }
