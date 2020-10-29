@@ -1,25 +1,39 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { UserInfo } from '../interfaces/user';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SignedInUserService {
+  user: UserInfo;
   username: string;
   password: string;
+  
 
-  constructor() {
-    this.username = '';
-  }
+  constructor(private http: HttpClient) {}
 
-  signIn(user: string): void {
-    this.username = user;
-  }
+  apiUrl = '/api/User/Login';
+  signIn(username, password): Observable<userInfo>{
+    this.user.response = false;
 
-  validateUser(user: string, pass: string): boolean {
+    this.user = this.http.get<UserInfo>
+     (`${this.apiUrl}/{username}/{password}`)
+    if (this.user.response) {
+      return
+    } else if ()
+    {return
+    };
+}
+
+validateUser(user: string, pass: string):
+boolean {
     if (user != '') {
-      this.signIn(user);
+      this.signIn(user, pass);
       return true;
     }
     return false;
   }
+}
 }

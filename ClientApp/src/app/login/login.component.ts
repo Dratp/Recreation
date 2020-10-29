@@ -21,4 +21,8 @@ export class LoginComponent implements OnInit {
     }
   }
 
+  createUser(firstNameBox: string, lastNameBox: string, cityBox: string, stateBox: string, zipBox: string, newUserNameBox: string, passBox: string) {
+
+  };
+
 }
