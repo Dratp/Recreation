@@ -1,6 +1,6 @@
 USE [master]
 GO
-/****** Object:  Database [Recdit]    Script Date: 10/27/2020 2:35:08 PM ******/
+/****** Object:  Database [Recdit]    Script Date: 10/29/2020 9:37:37 AM ******/
 CREATE DATABASE [Recdit]
  CONTAINMENT = NONE
  ON  PRIMARY 
@@ -78,7 +78,10 @@ ALTER DATABASE [Recdit] SET QUERY_STORE = OFF
 GO
 USE [Recdit]
 GO
-/****** Object:  Table [dbo].[RIDB]    Script Date: 10/27/2020 2:35:08 PM ******/
+/****** Object:  User [csharp]    Script Date: 10/29/2020 9:37:37 AM ******/
+CREATE USER [csharp] FOR LOGIN [csharp] WITH DEFAULT_SCHEMA=[dbo]
+GO
+/****** Object:  Table [dbo].[RIDB]    Script Date: 10/29/2020 9:37:37 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -99,7 +102,7 @@ CREATE TABLE [dbo].[RIDB](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[RIDBAct]    Script Date: 10/27/2020 2:35:08 PM ******/
+/****** Object:  Table [dbo].[RIDBAct]    Script Date: 10/29/2020 9:37:37 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -112,6 +115,21 @@ CREATE TABLE [dbo].[RIDBAct](
 (
 	[id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[RIDBAddress]    Script Date: 10/29/2020 9:37:37 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[RIDBAddress](
+	[FacilityID] [nvarchar](10) NULL,
+	[Facilityaddress1] [nvarchar](50) NULL,
+	[Facilityaddress2] [nvarchar](50) NULL,
+	[Facilityaddress3] [nvarchar](50) NULL,
+	[City] [nvarchar](50) NULL,
+	[PostalCode] [nvarchar](50) NULL,
+	[AddressStateCode] [nvarchar](10) NULL
 ) ON [PRIMARY]
 GO
 SET IDENTITY_INSERT [dbo].[RIDB] ON 

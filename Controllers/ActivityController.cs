@@ -45,7 +45,7 @@ namespace Recreation.Controllers
         }
 
         [HttpGet]
-        [Route("{activity}/Number")] // api/Activity/(Variable)  : Returns all places that have a certain activity available
+        [Route("{activity}/Number")] // api/Activity/(Variable)/Number  : Returns a number that represents the amount of places that have a certain activity available
         public int GetActivityDataByActivityNum(string activity)
         {
             List<ActivityData> actByAct = db.GetActivityDataList();
