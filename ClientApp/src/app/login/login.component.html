@@ -2,7 +2,7 @@
   <h1>Please log in:</h1>
   <br />
   <fieldset class="pageLayout">
-    <ng-container *ngIf="!user.username">
+    <ng-container *ngIf="!User.username">
       <input #nameBox type="text" placeholder="Username" required />
       <br />
       <br />
@@ -17,7 +17,7 @@
   <h1>Or Create a new profile:</h1>
   <br />
   <fieldset class="pageLayout">
-    <ng-container *ngIf="!user.username">
+    <ng-container *ngIf="!User.username">
       <input #firstNameBox type="text" placeholder="First Name" required />
       <br />
       <br />

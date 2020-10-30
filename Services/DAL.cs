@@ -123,15 +123,15 @@ namespace Recreation.Services
             //If Username or password are blank or null, return error
             if (user.UserName == "" || user.UserName == null)
             {
-                return new { Login = false, reason = "User does not exist." };
+                return new { response = false, reason = "User does not exist." };
             }
             else if (user.Password != password)
             {
-                return new { Login = false, reason = "Password did not match." };
+                return new { response = false, reason = "Password did not match." };
             }
             else
             {
-                return new { Login = true };
+                return new { response = true };
             }
 
         }
