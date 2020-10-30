@@ -11,17 +11,22 @@ import { UserInfo } from '../interfaces/user';
 export class LoginComponent implements OnInit {
   user: UserInfo;
 
-  constructor(private User: SignedInUserService, private route: Router) { }
+  constructor(private UserService: SignedInUserService, private route: Router) {
+    this.user = {};
+  }
 
   ngOnInit() {
   }
 
   login(username: string, password: string) {
-    this.User.signIn(username, password).subscribe(user => this.user = user);
-
+    console.log(`username = ${username} password = ${password}`)
+    this.UserService.signIn(username, password).subscribe(user => this.user = user);
     console.log(`response = ${this.user.response} name = ${this.user.userID} ${this.user.userName} reason = ${this.user.reason}`)
-
+    
     if (this.user.response) {
+      this.UserService.username = this.user.userName;
+      this.UserService.userId = this.user.userID;
+      console.log(`${this.UserService.username} , ${this.UserService.userId}`);
       this.route.navigate([""]);
     }
     

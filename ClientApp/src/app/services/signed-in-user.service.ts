@@ -7,25 +7,34 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class SignedInUserService {
-  user: UserInfo;
+  currentUser: UserInfo;
   username: string;
-  password: string;
+  userId: number;
+  apiUrl = '/api/User/Login';
   
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    this.username = "";
+    this.userId = 0;
+    this.refresh();
+  }
 
-  apiUrl = '/api/User/Login';
-
+  refresh() {
+    this.signIn("username", "password")
+  }
+  
   signIn(username, password): Observable<UserInfo>
   {
+    console.log("Sign in service called");
     return this.http.get<UserInfo>
-     (`${this.apiUrl}/{username}/{password}`)
+      (`${this.apiUrl}/${username}/${password}`);
+
     /*if (this.user.response) {
       return
     } else if (!this.user.response)
     {return
     };*/
-}
+  }
 
 validateUser(user: string, pass: string):
 boolean {

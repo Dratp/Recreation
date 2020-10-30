@@ -36,7 +36,7 @@ namespace Recreation.Services
 
             long id = db.Insert(user);
 
-            user.UserId = id;
+            user.UserID = id;
 
             return user;
         }
@@ -131,7 +131,7 @@ namespace Recreation.Services
             }
             else
             {
-                return new { response = true };
+                return new { response = true, userID = user.UserID ,userName = user.UserName, reason = "Success!" };
             }
 
         }
