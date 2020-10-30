@@ -15,16 +15,16 @@ export class SignedInUserService {
   constructor(private http: HttpClient) {}
 
   apiUrl = '/api/User/Login';
-  signIn(username, password): Observable<userInfo>{
-    this.user.response = false;
 
-    this.user = this.http.get<UserInfo>
+  signIn(username, password): Observable<UserInfo>
+  {
+    return this.http.get<UserInfo>
      (`${this.apiUrl}/{username}/{password}`)
-    if (this.user.response) {
+    /*if (this.user.response) {
       return
-    } else if ()
+    } else if (!this.user.response)
     {return
-    };
+    };*/
 }
 
 validateUser(user: string, pass: string):
@@ -35,5 +35,4 @@ boolean {
     }
     return false;
   }
-}
 }

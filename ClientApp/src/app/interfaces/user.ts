@@ -3,5 +3,5 @@ export interface UserInfo {
   password?: string;
   userID?: number;
   reason?: string;
-  response: boolean;
+  response?: boolean;
 }
