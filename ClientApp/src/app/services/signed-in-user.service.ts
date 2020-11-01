@@ -21,6 +21,7 @@ export class SignedInUserService {
     this.userResponse = false;
   }
 
+  // This is the function that actually does something in this case sets the username and user ID
   SetUser(user: UserInfo) {
     this.username = user.userName;
     this.userId = user.userID;
@@ -30,18 +31,20 @@ export class SignedInUserService {
     }
   }
 
+  // This is the API Call
   authUser(username, password): Observable<UserInfo> {
     return this.http.get<UserInfo>
       (`${this.apiUrl}/${username}/${password}`);
   }
 
+  // This is the function that subscribes to the API call and then send the "results" to the function that actually does something!
   signIn(username, password)
   {
     this.authUser(username, password).subscribe(results => this.SetUser(results));
   }
 
-validateUser(user: string, pass: string):
-boolean {
+  validateUser(user: string, pass: string):
+  boolean {
     if (user != '') {
       this.signIn(user, pass);
       return true;

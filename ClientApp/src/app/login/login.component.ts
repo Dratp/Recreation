@@ -20,16 +20,7 @@ export class LoginComponent implements OnInit {
   }
 
   login(username: string, password: string) {
-    console.log(`username = ${username} password = ${password}`)
     this.UserService.signIn(username, password);
-    
-    console.log(`response = ${this.user.response} name = ${this.user.userID} ${this.user.userName} reason = ${this.user.reason}`)
-
-    if (this.UserService.userResponse) {
-      console.log(`${this.UserService.username} , ${this.UserService.userId}`);
-      this.route.navigate([""]);
-    }
-    
   }
 
 
