@@ -10,7 +10,7 @@ namespace Recreation.Models
         public string FacilityID { get; set; }
         public string FacilityName { get; set; }
         public string Activity { get; set; }
-        public string FacilityLongtitude { get; set; }
+        public string FacilityLongitude { get; set; }
         public string FacilityLatitude { get; set; }
     }
 }
