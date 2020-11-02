@@ -30,7 +30,7 @@ import { MapdisplayComponent } from './mapdisplay/mapdisplay.component';
 
     AppRoutingModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyDzw-ESc6jKPGUM5BfZZguBuVN6eEvsxVg'
+      apiKey: '____APIKEY____'
     })
   ],
   providers: [],
