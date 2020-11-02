@@ -11,6 +11,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { ActivityComponent } from './activity/activity.component';
 import { LoginComponent } from './login/login.component';
 import { FavoritesComponent } from './favorites/favorites.component';
+import { AgmCoreModule } from '@agm/core';
+import { MapdisplayComponent } from './mapdisplay/mapdisplay.component';
 
 @NgModule({
   declarations: [
@@ -20,13 +22,17 @@ import { FavoritesComponent } from './favorites/favorites.component';
     ActivityComponent,
     LoginComponent,
     FavoritesComponent
+    MapdisplayComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
 
-    AppRoutingModule
+    AppRoutingModule,
+    AgmCoreModule.forRoot({
+      apiKey: '____APIKEY____'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
