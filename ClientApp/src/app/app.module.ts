@@ -10,6 +10,9 @@ import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ActivityComponent } from './activity/activity.component';
 import { LoginComponent } from './login/login.component';
+import { AgmCoreModule } from '@agm/core';
+import { MapdisplayComponent } from './mapdisplay/mapdisplay.component';
+
 
 @NgModule({
   declarations: [
@@ -18,13 +21,17 @@ import { LoginComponent } from './login/login.component';
     HomeComponent,
     ActivityComponent,
     LoginComponent,
+    MapdisplayComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
 
-    AppRoutingModule
+    AppRoutingModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAb9XY0o-KGm95YmvxsEmtE1WlKBCPOxSA&q'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
