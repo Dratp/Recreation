@@ -13,6 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { AgmCoreModule } from '@agm/core';
 import { MapdisplayComponent } from './mapdisplay/mapdisplay.component';
+import { ActivitylistComponent } from './activitylist/activitylist.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { MapdisplayComponent } from './mapdisplay/mapdisplay.component';
     ActivityComponent,
     LoginComponent,
     FavoritesComponent,
-    MapdisplayComponent
+    MapdisplayComponent,
+    ActivitylistComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
