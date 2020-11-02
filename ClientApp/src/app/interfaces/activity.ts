@@ -2,7 +2,7 @@ export interface ActivityData {
     facilityID: string;
     facilityName: string;
     activity: string;
-    facilityLongtitude: string;
+    facilityLongitude: string;
     facilityLatitude: string;
 }
 

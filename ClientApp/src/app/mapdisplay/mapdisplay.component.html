@@ -4,6 +4,21 @@
 
 <!-- this creates a google map on the page with the given lat/lng from -->
 <!-- the component as the initial center of the map: -->
-<agm-map [latitude]="lat" [longitude]="lng">
-  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+<agm-map [latitude]="42.5" [longitude]="-83">
+    <agm-marker
+       *ngFor="let activity of activities"
+                [latitude]="activity.facilityLatitude"
+                [longitude]="activity.facilityLongitude">
+
+    </agm-marker>
+
+ 
 </agm-map>
+
+
+
+
+<div *ngFor="let activity of activities">
+
+  {{activity.facilityID}} {{activity.facilityName}} {{activity.activity}} {{activity.facilityLatitude}} {{activity.facilityLongitude}}
+</div>
