@@ -12,7 +12,7 @@ const routes: Routes = [
  { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'activity', component: ActivityComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'favorites', component: FavoritesComponent }
+  { path: 'favorites', component: FavoritesComponent },
   { path: 'map', component: MapdisplayComponent }
 ]
 

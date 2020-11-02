@@ -21,7 +21,7 @@ import { MapdisplayComponent } from './mapdisplay/mapdisplay.component';
     HomeComponent,
     ActivityComponent,
     LoginComponent,
-    FavoritesComponent
+    FavoritesComponent,
     MapdisplayComponent
   ],
   imports: [
