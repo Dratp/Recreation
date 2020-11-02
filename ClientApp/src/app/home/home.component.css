@@ -1,2 +1,27 @@
-﻿body {
+body {
+  
+}
+
+.column1 {
+  float: left;
+  width: 20%;
+  padding: 10px;
+}
+
+.column2 {
+  width: 40%;
+  padding: 10px;
+}
+
+.column3 {
+  float: right;
+  width: 40%;
+  padding: 10px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }

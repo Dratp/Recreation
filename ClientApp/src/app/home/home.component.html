@@ -1,16 +1,15 @@
-<table>
-  <thead></thead>
-  <tr>
-    <td align="left">
-      <div *ngFor="let activity of uniqueActs">
-        <a href="getActivityList()">{{activity}}</a>
-      </div>
-    </td>
-    <td align="center">
-      Column 2
-    </td>
-    <td align="right">
-      Column 3
-    </td>
-  </tr>
-</table>
+<div class="row">
+  <div *ngFor="let activity of uniqueActs" class="column1" style="background-color:#aaa;">
+    <a href="getActivityList()">{{activity}}</a><br /><br />
+  </div>
+
+  <div class="column2">
+    <app-activity></app-activity>
+  </div>
+
+  <div class="column3" style="background-color:#bbb;">
+    Column 3
+  </div>
+
+ </div>
+
