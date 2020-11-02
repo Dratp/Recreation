@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SignedInUserService } from '../services/signed-in-user.service';
 
 @Component({
   selector: 'app-nav-menu',
@@ -6,6 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./nav-menu.component.css']
 })
 export class NavMenuComponent {
+  constructor(private user: SignedInUserService) { }
   isExpanded = false;
 
   collapse() {

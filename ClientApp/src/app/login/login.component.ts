@@ -20,7 +20,10 @@ export class LoginComponent implements OnInit {
   }
 
   login(username: string, password: string) {
-    this.UserService.signIn(username, password);
+    //console.log("Button pressed");
+    if (username != "" && password != "") {
+      this.UserService.signIn(username, password);
+    }
   }
 
 

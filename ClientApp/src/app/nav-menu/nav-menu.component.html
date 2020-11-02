@@ -29,7 +29,12 @@
               [routerLinkActive]="['link-active']">
             <a class="nav-link text-dark" [routerLink]="['/activity']">Activity</a>
           </li>
-          <li class="nav-item"
+          <!--User Login in display if User is signed in or not-->
+          <li *ngIf="user.username" class="nav-item" [routerLinkActive]="['link-active']">
+            <a class="nav-link text-dark" [routerLink]="['/favorites']">{{user.username}}</a>
+          </li>
+
+          <li *ngIf="!user.username" class="nav-item"
               [routerLinkActive]="['link-active']">
             <a class="nav-link text-dark" [routerLink]="['/login']">Login</a>
           </li>

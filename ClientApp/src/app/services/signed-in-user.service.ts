@@ -12,6 +12,7 @@ export class SignedInUserService {
   username: string;
   userId: number;
   userResponse: boolean;
+  userReason: string;
   apiUrl = '/api/User/Login';
   
 
@@ -19,13 +20,16 @@ export class SignedInUserService {
     this.username = "";
     this.userId = 0;
     this.userResponse = false;
+    this.userReason = "";
   }
 
   // This is the function that actually does something in this case sets the username and user ID
   SetUser(user: UserInfo) {
+    //console.log(`Set User Called ${user.userName}`);
     this.username = user.userName;
     this.userId = user.userID;
     this.userResponse = user.response;
+    this.userReason = user.reason;
     if (user.response) {
       this.route.navigate([""]);
     }
@@ -33,6 +37,7 @@ export class SignedInUserService {
 
   // This is the API Call
   authUser(username, password): Observable<UserInfo> {
+    //console.log("API call made");
     return this.http.get<UserInfo>
       (`${this.apiUrl}/${username}/${password}`);
   }
@@ -40,6 +45,7 @@ export class SignedInUserService {
   // This is the function that subscribes to the API call and then send the "results" to the function that actually does something!
   signIn(username, password)
   {
+    //console.log("Sign In called");
     this.authUser(username, password).subscribe(results => this.SetUser(results));
   }
 
