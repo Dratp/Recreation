@@ -21,7 +21,7 @@ export class MapdisplayComponent {
   }
 
   ngOnInit(): void {
-    this.getActivityByLocation('Biking');
+    this.getActivityByLocation('Hiking');
   }
 
   getActivityList() {
