@@ -21,6 +21,7 @@ namespace Recreation.Services
             db = new SqlConnection(config.GetConnectionString("Connection"));
         }
 
+
         public User CreateUser(string userName, string password, string firstName, string lastName, string zip, string city, string state)
         {
             User user = new User()
@@ -40,7 +41,6 @@ namespace Recreation.Services
 
             return user;
         }
-
         
 
         public List<ActivityData> GetActivityDataList()
@@ -48,9 +48,6 @@ namespace Recreation.Services
             List<ActivityData> data = db.Query<ActivityData>("SELECT RIDB.FacilityID, RIDB.FacilityName, RIDBAct.Activity, RIDB.FacilityLatitude, RIDB.FacilityLongitude FROM RIDB JOIN RIDBAct on RIDB.FacilityID=RIDBAct.FacilityID").AsList<ActivityData>();
             return data;
         }
-
-
-
 
 
         public List<Likes> GetLikes(long userID, long activityID)
@@ -65,8 +62,6 @@ namespace Recreation.Services
                     data.Remove(like);
                     return data;
                 }
-
-
             }
 
             long id = AddLike(userID,activityID);
@@ -76,9 +71,6 @@ namespace Recreation.Services
                 RIDBActivity = activityID 
             }
             );
-
-
-
             return data;
         }
 
@@ -95,11 +87,11 @@ namespace Recreation.Services
             return id;
         }
 
+
         public void DeleteLike(Likes like)
         {
             db.Delete(like);
         }
-
 
 
         public User GetUser(string userName)
@@ -113,8 +105,8 @@ namespace Recreation.Services
                 User user = new User();
                 return user;
             }
-
         }
+
 
         public object Login(string userName, string password)
         {
@@ -133,10 +125,13 @@ namespace Recreation.Services
             {
                 return new { response = true, userID = user.UserID ,userName = user.UserName, reason = "Success!" };
             }
-
         }
 
 
-
+        public List<string> GetUniqueActivityList()
+        {
+            List<string> data = db.Query<string>($"SELECT distinct Activity FROM RIDBAct").AsList<string>();
+            return data;
+        }
     }
 }

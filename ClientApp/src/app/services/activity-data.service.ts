@@ -18,6 +18,11 @@ export class ActivityDataService {
   
   getActivityByLocation(activityname): Observable<ActivityData[]>{
     return (this.http.get<ActivityData[]>(`${this.apiUrl}/${activityname}`));
+  }
 
-}
+
+  //API call
+  getUniqueActivities(): Observable<string[]>{
+    return (this.http.get<string[]>(`${this.apiUrl}/list`));
+  }
 }

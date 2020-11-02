@@ -27,6 +27,15 @@ namespace Recreation.Controllers
         }
 
         [HttpGet]
+        [Route("list")] // api/Activity/list   Returns the unique list of activities in table
+        public List<string> GetUniqueActivity()
+        {
+            //List<string> TestList = new List<string>(){"Test","Data"};
+            //return TestList;
+            return db.GetUniqueActivityList();
+        }
+
+        [HttpGet]
         [Route("{activity}")] // api/Activity/(Variable)  : Returns all places that have a certain activity available
         public List<ActivityData> GetActivityDataByActivity(string activity)
         {
@@ -40,7 +49,6 @@ namespace Recreation.Controllers
                     goodstuff.Add(act);
                 }
             }
-
             return goodstuff;
         }
 

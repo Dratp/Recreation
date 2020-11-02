@@ -10,9 +10,9 @@ import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ActivityComponent } from './activity/activity.component';
 import { LoginComponent } from './login/login.component';
+import { FavoritesComponent } from './favorites/favorites.component';
 import { AgmCoreModule } from '@agm/core';
 import { MapdisplayComponent } from './mapdisplay/mapdisplay.component';
-
 
 @NgModule({
   declarations: [
@@ -21,6 +21,7 @@ import { MapdisplayComponent } from './mapdisplay/mapdisplay.component';
     HomeComponent,
     ActivityComponent,
     LoginComponent,
+    FavoritesComponent
     MapdisplayComponent
   ],
   imports: [
