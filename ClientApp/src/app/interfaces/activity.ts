@@ -5,6 +5,7 @@ export interface ActivityData {
     facilityLongitude: string;
     facilityLatitude: string;
     facilityDescription: string;
+    id: number;
 }
 
 export interface ActivityDatas {
