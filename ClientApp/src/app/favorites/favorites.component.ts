@@ -17,6 +17,7 @@ export class FavoritesComponent implements OnInit {
   }
 
   callLogout() {
+    console.log("button pressed!");
     this.UserService.logout();
     }
   }

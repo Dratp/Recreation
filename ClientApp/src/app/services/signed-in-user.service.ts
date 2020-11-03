@@ -8,9 +8,13 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class SignedInUserService {
-  currentUser: UserInfo;
+  // username and user ID are assigned when a user is logged in and then passed around the components
   username: string;
   userId: number;
+
+  // user response and user reason are for the login function
+  // if true / success a user logged in
+  // if false a reason will be given why the login failed
   userResponse: boolean;
   userReason: string;
   apiUrl = '/api/User/Login';
@@ -50,9 +54,9 @@ export class SignedInUserService {
   }
 
   logout() {
-    this.currentUser.userName = "";
-    this.currentUser.password = "";
-    this.currentUser.userID = 0;
+    console.log("user service logout called");
+    this.username = "";
+    this.userId = 0;
     this.route.navigate([""]);
   }
 

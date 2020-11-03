@@ -32,8 +32,8 @@ import { ActivitylistComponent } from './activitylist/activitylist.component';
     FormsModule,
     AppRoutingModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyDzw-ESc6jKPGUM5BfZZguBuVN6eEvsxVg'
-      //AIzaSyAM6hAzGZT_Gierz7KQb3RlHT6v-xSVW34 New key
+      apiKey: ''
+     
     })
   ],
   providers: [],
