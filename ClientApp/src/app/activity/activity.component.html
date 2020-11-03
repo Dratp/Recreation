@@ -7,28 +7,32 @@
 
     <div *ngFor="let activity of activities">
 
-      <h4>{{activity.facilityName}} ({{activity.activity}})</h4>
+      <button>Map</button>
+      <h5>{{activity.id}}  {{activity.facilityName}} ({{activity.activity}})</h5>
+      <p>Description</p>
+      <button (click)="addLikedActivity(activity)">Fav</button>
+      <!--
+  <div id="content-wrapper">
+    <header id="header">
+      <h5>{{activity.facilityName}}</h5>
+    </header>
+    <section id="body">
+      <p>{{activity.facilityDescription}}</p>
+    </section>
+    <footer>
+      <button (click)="showDialog=!showDialog" class="btn">X</button>
 
-      <div id="content-wrapper">
-        <header id="header">
-          <h5>{{activity.facilityName}}</h5>
-        </header>
-        <section id="body">
-          <p>{{activity.facilityDescription}}</p>
-        </section>
-        <footer>
-          <button (click)="showDialog=!showDialog" class="btn">X</button>
+    </footer>
 
-        </footer>
-
-      </div>
+    </div>
+        -->
 
       <!--<button (click)="showDialog = !showDialog" class="btn">More</button>
 
-      <app-dialog visible="showDialog">
-        
-        <button (click)="showDialog = !showDialog">X</button>
-      </app-dialog>-->
+  <app-dialog visible="showDialog">
+
+    <button (click)="showDialog = !showDialog">X</button>
+  </app-dialog>-->
 
     </div>
   

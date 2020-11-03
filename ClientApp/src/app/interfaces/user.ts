@@ -8,7 +8,7 @@ export interface UserInfo {
 }
 
 export interface UserFavorite {
-  userID?: number;
-  activityname?: string;
-  activityid: number;
+  id: number;
+  UserID?: number;
+  RIDBActivity: number;
 }

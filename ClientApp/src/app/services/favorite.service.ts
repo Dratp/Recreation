@@ -11,13 +11,45 @@ export class FavoriteService {
   currentUser: UserInfo;
   activity: ActivityComponent;
   favorite: UserFavorite;
+  favorites: UserFavorite[];
 
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    this.favorites = [];
+  }
 
     apiUrl = '/api/user/like';
 
-  AddFavorite(favorite) {
-    return this.http.get<UserFavorite>(this.apiUrl + `/${favorite.UserID}/${this.favorite.activityid})`)
+
+
+  // This is the API call
+  FavoriteAPICall(favorite): Observable<UserFavorite[]> {
+    return this.http.get<UserFavorite[]>(this.apiUrl + `/${favorite.UserID}/${favorite.RIDBActivity}`)
   }
+
+  // This subscribes to the API Call
+  FavoriteManager(favorite)
+  {
+    this.FavoriteAPICall(favorite).subscribe(results => this.FavListManager(results));
+  }
+
+  // This actually does something
+  FavListManager(favorites: UserFavorite[]) {
+    this.ClearFavs();
+    this.PopulateFavs(favorites);
+  }
+
+  ClearFavs() {
+    for (let i = 0; i < this.favorites.length; i++) {
+      this.favorites.pop;
+    }
+  }
+
+  PopulateFavs(favs: UserFavorite[]) {
+    for (let i = 0; i < favs.length; i++) {
+      this.favorites.push(favs[i]);
+    }
+  }
+
+
 }
