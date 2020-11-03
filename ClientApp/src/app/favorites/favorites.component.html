@@ -1,9 +1,9 @@
-<div *ngIf="user.username" class="nav-item" [routerLinkActive]="['link-active']">
-  <a class="nav-link text-dark" [routerLink]="['/']">Logout {{user.username}}</a>
-</div>
+<div>
 
-<button (click)="logout()">Logout {{user.username}}</button>
+  <button (click)="callLogout()" style="float: right">Logout</button>
 
-<div class="column" style="background-color:#bbb;">
-  <app-mapdisplay></app-mapdisplay>
+  <div class="column" style="background-color:#bbb;">
+    <app-mapdisplay></app-mapdisplay>
+  </div>
+
 </div>

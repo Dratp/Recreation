@@ -16,9 +16,8 @@ export class FavoritesComponent implements OnInit {
   ngOnInit() {
   }
 
-  logout() {
-    this.user = {};
-    this.route.navigate([""]);
+  callLogout() {
+    this.UserService.logout();
     }
   }
 
