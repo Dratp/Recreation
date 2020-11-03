@@ -12,28 +12,31 @@ import { FavoriteService } from '../services/favorite.service';
 })
 
 export class ActivityComponent {
-  activities: ActivityData[];
   activity: ActivityData;
   userFavorite: UserFavorite;
   activityname: string;
 
 
-  constructor(private activitydataservice: ActivityDataService, private userdataservice: SignedInUserService, private favoriteservice: FavoriteService) { }
+  constructor(
+    private activitydataservice: ActivityDataService,
+    private userdataservice: SignedInUserService,
+    private favoriteservice: FavoriteService
+  ) { }
 
-  ngOnInit(): void {
-    this.getActivityList();
-  }
+  //ngOnInit(): void {
+  //  this.getActivityList();
+  //}
 
-  getActivityList() {
-    this.activitydataservice.getActivityDataList().subscribe(
-      activities => (this.activities = activities));
-  }
+  //getActivityList() {
+  //  this.activitydataservice.getActivityDataList().subscribe(
+  //    activities => (this.activitydataservice.activities = activities));
+  //}
 
-  getActivityByLocation(activityname) {
-    //return list of activites from service call.
-    this.activitydataservice.getActivityByLocation(activityname).subscribe(
-      activities => (this.activities = activities));
-  }
+  //getActivityByName(activityname) {
+  //  //return list of activites from service call.
+  //  this.activitydataservice.getActivityByName(activityname).subscribe(
+  //    activities => (this.activitydataservice.activities = activities));
+  //}
 
 
   addLikedActivity(activity: ActivityData) {

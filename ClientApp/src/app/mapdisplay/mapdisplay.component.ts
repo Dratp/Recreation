@@ -16,12 +16,10 @@ export class MapdisplayComponent {
   lat :number;
   lng : number;
 
-  constructor(private activitydataservice: ActivityDataService) {
-
-  }
+  constructor(private activitydataservice: ActivityDataService) {}
 
   ngOnInit(): void {
-    this.getActivityByLocation('Hiking');
+    this.getActivityByName('Hiking');
   }
 
   getActivityList() {
@@ -29,9 +27,9 @@ export class MapdisplayComponent {
       activities => (this.activities = activities));
   }
 
-  getActivityByLocation(activityname) {
+  getActivityByName(activityname) {
     //return list of activites from service call.
-    this.activitydataservice.getActivityByLocation(activityname).subscribe(
+    this.activitydataservice.getActivityByName(activityname).subscribe(
       activities => (this.activities = activities));
   }
 }
