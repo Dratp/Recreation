@@ -1,6 +1,6 @@
 USE [master]
 GO
-/****** Object:  Database [Recdit]    Script Date: 10/30/2020 11:37:12 AM ******/
+/****** Object:  Database [Recdit]    Script Date: 11/3/2020 2:04:49 PM ******/
 CREATE DATABASE [Recdit]
  CONTAINMENT = NONE
  ON  PRIMARY 
@@ -80,7 +80,16 @@ ALTER DATABASE [Recdit] SET QUERY_STORE = OFF
 GO
 USE [Recdit]
 GO
-/****** Object:  Table [dbo].[Likes]    Script Date: 10/30/2020 11:37:12 AM ******/
+/****** Object:  User [csharp]    Script Date: 11/3/2020 2:04:49 PM ******/
+CREATE USER [csharp] FOR LOGIN [csharp] WITH DEFAULT_SCHEMA=[dbo]
+GO
+ALTER ROLE [db_accessadmin] ADD MEMBER [csharp]
+GO
+ALTER ROLE [db_datareader] ADD MEMBER [csharp]
+GO
+ALTER ROLE [db_datawriter] ADD MEMBER [csharp]
+GO
+/****** Object:  Table [dbo].[Likes]    Script Date: 11/3/2020 2:04:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -95,7 +104,7 @@ CREATE TABLE [dbo].[Likes](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[RIDB]    Script Date: 10/30/2020 11:37:12 AM ******/
+/****** Object:  Table [dbo].[RIDB]    Script Date: 11/3/2020 2:04:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -116,7 +125,7 @@ CREATE TABLE [dbo].[RIDB](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[RIDBAct]    Script Date: 10/30/2020 11:37:12 AM ******/
+/****** Object:  Table [dbo].[RIDBAct]    Script Date: 11/3/2020 2:04:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -131,7 +140,7 @@ CREATE TABLE [dbo].[RIDBAct](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[RIDBAddress]    Script Date: 10/30/2020 11:37:12 AM ******/
+/****** Object:  Table [dbo].[RIDBAddress]    Script Date: 11/3/2020 2:04:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -146,25 +155,37 @@ CREATE TABLE [dbo].[RIDBAddress](
 	[AddressStateCode] [nvarchar](10) NULL
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Users]    Script Date: 10/30/2020 11:37:12 AM ******/
+/****** Object:  Table [dbo].[Users]    Script Date: 11/3/2020 2:04:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Users](
-	[UserID] [int] NOT NULL,
+	[UserID] [int] IDENTITY(1,1) NOT NULL,
 	[UserName] [nvarchar](50) NULL,
 	[Password] [nvarchar](25) NULL,
 	[FirstName] [nvarchar](35) NULL,
 	[LastName] [nvarchar](35) NULL,
 	[ZIP] [nvarchar](10) NULL,
 	[City] [nvarchar](50) NOT NULL,
-	[State] [nchar](10) NULL,
+	[State] [nvarchar](10) NULL,
  CONSTRAINT [PK_Users] PRIMARY KEY CLUSTERED 
 (
 	[UserID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
+GO
+SET IDENTITY_INSERT [dbo].[Likes] ON 
+GO
+INSERT [dbo].[Likes] ([id], [UserID], [RIDBActivity]) VALUES (3, 1, 13)
+GO
+INSERT [dbo].[Likes] ([id], [UserID], [RIDBActivity]) VALUES (4, 1, 15)
+GO
+INSERT [dbo].[Likes] ([id], [UserID], [RIDBActivity]) VALUES (9, 1, 1)
+GO
+INSERT [dbo].[Likes] ([id], [UserID], [RIDBActivity]) VALUES (10, 1, 52)
+GO
+SET IDENTITY_INSERT [dbo].[Likes] OFF
 GO
 SET IDENTITY_INSERT [dbo].[RIDB] ON 
 GO
@@ -2062,6 +2083,12 @@ INSERT [dbo].[RIDBAct] ([id], [FacilityID], [Activity]) VALUES (197, N'244396', 
 GO
 SET IDENTITY_INSERT [dbo].[RIDBAct] OFF
 GO
+SET IDENTITY_INSERT [dbo].[Users] ON 
+GO
+INSERT [dbo].[Users] ([UserID], [UserName], [Password], [FirstName], [LastName], [ZIP], [City], [State]) VALUES (1, N'TestUser', N'abc123', N'Test', N'User', N'48035', N'clinton', N'Mi')
+GO
+SET IDENTITY_INSERT [dbo].[Users] OFF
+GO
 ALTER TABLE [dbo].[Likes]  WITH CHECK ADD  CONSTRAINT [RIDBids] FOREIGN KEY([RIDBActivity])
 REFERENCES [dbo].[RIDBAct] ([id])
 GO
@@ -2076,4 +2103,3 @@ USE [master]
 GO
 ALTER DATABASE [Recdit] SET  READ_WRITE 
 GO
-
