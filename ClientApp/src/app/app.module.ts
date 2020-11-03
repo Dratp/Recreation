@@ -33,7 +33,7 @@ import { ActivitylistComponent } from './activitylist/activitylist.component';
 
     AppRoutingModule,
     AgmCoreModule.forRoot({
-      apiKey: '____APIKEY____'
+      apiKey: 'AIzaSyDzw-ESc6jKPGUM5BfZZguBuVN6eEvsxVg'
     })
   ],
   providers: [],
