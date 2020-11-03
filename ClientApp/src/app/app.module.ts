@@ -14,6 +14,7 @@ import { AgmCoreModule } from '@agm/core';
 import { MapdisplayComponent } from './mapdisplay/mapdisplay.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,

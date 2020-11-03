@@ -1,33 +1,52 @@
-﻿import { Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivityData, ActivityDatas } from '../interfaces/activity';
 import { ActivityDataService } from '../services/activity-data.service';
+import { SignedInUserService } from '../services/signed-in-user.service';
+import { UserInfo, UserFavorite } from '../interfaces/user';
+import { FavoriteService } from '../services/favorite.service';
 
 @Component({
-    selector: 'app-activity',
-    templateUrl: './activity.component.html',
-    styleUrls: ['./activity.component.css']
+  selector: 'app-activity',
+  templateUrl: './activity.component.html',
+  styleUrls: ['./activity.component.css']
 })
 
 export class ActivityComponent {
-    activities: ActivityData[];
-    activity : ActivityData;
-    activityname : string;
+  activities: ActivityData[];
+  activity: ActivityData;
+  userFavorite: UserFavorite;
+  activityname: string;
   
-  constructor (private activitydataservice: ActivityDataService ) {}
-  
+
+  constructor(private activitydataservice: ActivityDataService, private userdataservice: SignedInUserService, private favoriteservice: FavoriteService) { }
+
   ngOnInit(): void {
-   this.getActivityList();
+    this.getActivityList();
   }
-  
+
   getActivityList() {
     this.activitydataservice.getActivityDataList().subscribe(
       activities => (this.activities = activities));
   }
-  
-  getActivityByLocation(activityname){
-      //return list of activites from service call.
-      this.activitydataservice.getActivityByLocation(activityname).subscribe(
-        activities => (this.activities = activities));
+
+  getActivityByLocation(activityname) {
+    //return list of activites from service call.
+    this.activitydataservice.getActivityByLocation(activityname).subscribe(
+      activities => (this.activities = activities));
   }
-  
+
+  addLikedActivity() {
+    let favorite: UserFavorite = {
+      userID: this.userdataservice.userId,
+      activityname: this.activity.activity,
+      activityid: this.activity.id
+    }
+
+    this.favoriteservice.AddFavorite(favorite).subscribe();
+    
+   
+
+
+    
   }
+}
