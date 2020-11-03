@@ -7,28 +7,35 @@
 
     <div *ngFor="let activity of activities">
 
-      <h4>{{activity.facilityName}} ({{activity.activity}})</h4>
+      <!--<h4>{{activity.facilityName}} ({{activity.activity}})</h4>-->
 
       <div id="content-wrapper">
-        <header id="header">
-          <h5>{{activity.facilityName}}</h5>
+        <header id="header"><button (click)="addPinToMap()" class="btn">[O]</button>
+          <a class="button" href="#popup">{{activity.facilityName}}</a><button (click)="addToFavorites()" class="btn">[X]</button>
         </header>
-        <section id="body">
-          <p>{{activity.facilityDescription}}</p>
-        </section>
-        <footer>
-          <button (click)="showDialog=!showDialog" class="btn">X</button>
-
-        </footer>
-
       </div>
 
+      <div id="popup" class="overlay">
+        <div class="popup">
+          <h2>{{activity.facilityName}}</h2>
+          <a class="close" href="#">&times;</a>
+          <div class="content">
+            <p>{{activity.facilityDescription}}</p>
+          </div>
+        </div>
+      </div>
+      <!--<section id="body">
+    <p>{{activity.facilityDescription}}</p>
+  </section>
+  <footer>
+  </footer>
+  -->
       <!--<button (click)="showDialog = !showDialog" class="btn">More</button>
 
-      <app-dialog visible="showDialog">
-        
-        <button (click)="showDialog = !showDialog">X</button>
-      </app-dialog>-->
+  <app-dialog visible="showDialog">
+
+    <button (click)="showDialog = !showDialog">X</button>
+  </app-dialog>-->
 
     </div>
   
