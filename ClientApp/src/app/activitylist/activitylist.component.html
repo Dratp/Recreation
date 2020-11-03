@@ -1,4 +1,4 @@
-<p>activitylist works!</p>
+<p>Activity List</p>
 <ul class="activitylist">
   <li *ngFor="let activity of uniqueActs" [class.selected]="activity === chosenActivity" (click)="chooseActivity(activity)">
     <span class="activity">{{activity}}</span>

@@ -1,4 +1,4 @@
-﻿import { Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivityData, ActivityDatas } from '../interfaces/activity';
 import { ActivityDataService } from '../services/activity-data.service';
 

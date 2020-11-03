@@ -1,20 +1,18 @@
-<div style="border: 1px solid red">mapdisplay Component</div>
+<div class="container">
+  <h1>{{ title }}</h1>
 
-<h1>{{ title }}</h1>
-
-<!-- this creates a google map on the page with the given lat/lng from -->
-<!-- the component as the initial center of the map: -->
-<agm-map [latitude]="42.5" [longitude]="-83">
-    <agm-marker
-       *ngFor="let activity of activities"
+  <!-- this creates a google map on the page with the given lat/lng from -->
+  <!-- the component as the initial center of the map: -->
+  <agm-map [latitude]="44.5" [longitude]="-85" [zoom]="6.2">
+    <agm-marker *ngFor="let activity of activities"
                 [latitude]="activity.facilityLatitude"
                 [longitude]="activity.facilityLongitude">
 
     </agm-marker>
-</agm-map>
+  </agm-map>
 
 
-
+</div>
 
 <!--<div *ngFor="let activity of activities">
 
