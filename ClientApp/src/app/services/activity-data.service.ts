@@ -7,8 +7,11 @@ import { ActivityData } from '../interfaces/activity';
   providedIn: 'root'
 })
 export class ActivityDataService {
+  ChosenActivity: string;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    this.ChosenActivity = "";
+  }
 
   apiUrl = '/api/Activity';
 

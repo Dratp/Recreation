@@ -11,7 +11,6 @@ export class ActivitylistComponent implements OnInit {
 
   activities: ActivityData[];
   uniqueActs: string[];
-  chosenActivity: string;
 
   constructor(private activitydataservice: ActivityDataService) {
     this.uniqueActs = [];
@@ -28,7 +27,7 @@ export class ActivitylistComponent implements OnInit {
   }
 
   chooseActivity(activity: string): void {
-    this.chosenActivity = activity;
+    this.activitydataservice.ChosenActivity = activity;
   }
 
 
