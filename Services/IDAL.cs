@@ -10,7 +10,7 @@ namespace Recreation.Services
     {
         public List<ActivityData> GetActivityDataList();
 
-        public User CreateUser(string userName, string password, string firstName, string lastName, string zip, string city, string state);
+        public User CreateUser(User newUser);
 
         public Object Login(string userName, string password);
 
