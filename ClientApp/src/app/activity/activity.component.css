@@ -96,6 +96,7 @@ h1 {
 
 .popup p {
   margin: 0 0 1em;
+  font-size: small;
 }
 
   .popup p:last-child {
