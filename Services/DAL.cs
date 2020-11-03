@@ -45,7 +45,7 @@ namespace Recreation.Services
 
         public List<ActivityData> GetActivityDataList()
         {
-            List<ActivityData> data = db.Query<ActivityData>("SELECT RIDB.FacilityID, RIDB.FacilityName, RIDBAct.Activity, RIDB.FacilityLatitude, RIDB.FacilityLongitude FROM RIDB JOIN RIDBAct on RIDB.FacilityID=RIDBAct.FacilityID").AsList<ActivityData>();
+            List<ActivityData> data = db.Query<ActivityData>("SELECT RIDBAct.id, RIDB.FacilityID, RIDB.FacilityName, RIDBAct.Activity, RIDB.FacilityLatitude, RIDB.FacilityLongitude, RIDB.FacilityDescription FROM RIDB JOIN RIDBAct on RIDB.FacilityID=RIDBAct.FacilityID").AsList<ActivityData>();
             return data;
         }
 

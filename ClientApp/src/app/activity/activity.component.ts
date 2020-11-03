@@ -35,6 +35,7 @@ export class ActivityComponent {
       activities => (this.activities = activities));
   }
 
+
   addLikedActivity() {
     let favorite: UserFavorite = {
       userID: this.userdataservice.userId,
@@ -45,8 +46,6 @@ export class ActivityComponent {
     this.favoriteservice.AddFavorite(favorite).subscribe();
     
    
-
-
-    
   }
 }
+

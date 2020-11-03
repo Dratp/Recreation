@@ -2,17 +2,17 @@
   margin: 0 0 2em 0;
   list-style-type: none;
   padding: 0;
-  width: 15em;
+  width: 9em;
 }
 
   .activitylist li {
     cursor: pointer;
     position: relative;
-    left: 0;
-    background-color: #EEE;
+    left: 20px;
+    background-color: #7EBCE5;
     margin: .5em;
     padding: .3em 0;
-    height: 1.6em;
+    height: 1.5em;
     border-radius: 4px;
   }
 
@@ -33,15 +33,23 @@
       }
 
   .activitylist .activity {
-    display: inline-block;
-    font-size: small;
-    color: white;
+    font-size: medium;
+    color: #000000;
     padding: 0.8em 0.7em 0 0.7em;
     line-height: 1em;
     position: relative;
-    left: -1px;
-    top: -4px;
+    left: 20px;
+    top: -6px;
     height: 1.8em;
     margin-right: .8em;
     border-radius: 4px 0 0 4px;
+    
+  }
+
+  p{
+      font-size: medium;
+      top: auto;
+      color: #FFFFFF;
+      position:center;
+      margin-left: 45px;
   }
