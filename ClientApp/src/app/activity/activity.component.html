@@ -4,6 +4,7 @@
   <input [(ngModel)]="activityname" placeholder="Enter Activity">
   <button (click)="getActivityByLocation(activityname)">Enter</button>
 
+
   <div *ngFor="let activity of activities">
 
     <!--<h4>{{activity.facilityName}} ({{activity.activity}})</h4>-->
@@ -23,6 +24,7 @@
           <p>{{activity.facilityDescription}}</p>
         </div>
       </div>
+
     </div>
 
   </div>
