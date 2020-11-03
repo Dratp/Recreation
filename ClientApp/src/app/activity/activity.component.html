@@ -1,7 +1,41 @@
-<input [(ngModel)] = "activityname" placeholder="Enter Activity">
-<button (click)="getActivityByLocation(activityname)">Enter</button>
 
-<div *ngFor="let activity of activities">
+<h1>Activities</h1>
+<div>
+
+  <input [(ngModel)]="activityname" placeholder="Enter Activity">
+    <button (click)="getActivityByLocation(activityname)">Enter</button>
+
+    <div *ngFor="let activity of activities">
+
+      <h4>{{activity.facilityName}} ({{activity.activity}})</h4>
+
+      <div id="content-wrapper">
+        <header id="header">
+          <h5>{{activity.facilityName}}</h5>
+        </header>
+        <section id="body">
+          <p>{{activity.facilityDescription}}</p>
+        </section>
+        <footer>
+          <button (click)="showDialog=!showDialog" class="btn">X</button>
+
+        </footer>
+
+      </div>
+
+      <!--<button (click)="showDialog = !showDialog" class="btn">More</button>
+
+      <app-dialog visible="showDialog">
+        
+        <button (click)="showDialog = !showDialog">X</button>
+      </app-dialog>-->
+
+    </div>
   
+
     {{activity.facilityID}} {{activity.facilityName}} {{activity.activity}}  
 </div>
+
+</div>
+
+
