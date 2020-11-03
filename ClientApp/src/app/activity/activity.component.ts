@@ -36,15 +36,15 @@ export class ActivityComponent {
   }
 
 
-  addLikedActivity() {
+  addLikedActivity(activity: ActivityData) {
     let favorite: UserFavorite = {
-      userID: this.userdataservice.userId,
-      activityname: this.activity.activity,
-      activityid: this.activity.id
+      id: 0,
+      UserID: this.userdataservice.userId,
+      RIDBActivity: activity.id
     }
 
-    this.favoriteservice.AddFavorite(favorite).subscribe();
-
+    this.favoriteservice.FavoriteManager(favorite);
+    
 
   }
 }

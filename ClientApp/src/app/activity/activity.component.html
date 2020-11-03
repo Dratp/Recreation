@@ -5,6 +5,7 @@
   <button (click)="getActivityByLocation(activityname)">Enter</button>
 
 
+
   <div *ngFor="let activity of activities">
 
     <!--<h4>{{activity.facilityName}} ({{activity.activity}})</h4>-->
@@ -12,7 +13,7 @@
     <div id="content-wrapper">
       <header id="header">
         <button (click)="addPinToMap()" class="btn">[O]</button>
-        <a class="button" href="#popup">{{activity.facilityName}}</a><button (click)="addToFavorites()" class="btn">[X]</button>
+        <a class="button" href="#popup">{{activity.facilityName}}</a><button (click)="addLikedActivity(activity)" class="btn">[X]</button>
       </header>
     </div>
 
