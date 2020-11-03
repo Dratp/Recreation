@@ -16,6 +16,8 @@ namespace Recreation.Services
 
         public List<Likes> GetLikes(long userID, long activityID);
 
+        public List<Likes> GetLikes(long userID);
+
         public User GetUser(string userName);
 
         public long AddLike(long userID, long activityID);
@@ -23,5 +25,7 @@ namespace Recreation.Services
         public void DeleteLike(Likes like);
 
         public List<string> GetUniqueActivityList();
+
+
     }
 }

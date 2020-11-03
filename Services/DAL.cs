@@ -49,6 +49,12 @@ namespace Recreation.Services
             return data;
         }
 
+        public List<Likes> GetLikes(long userID)
+        {
+            List<Likes> data = db.Query<Likes>($"SELECT * FROM [Likes] WHERE UserID = {userID}").AsList<Likes>();
+            return data;
+        }
+
 
         public List<Likes> GetLikes(long userID, long activityID)
         {

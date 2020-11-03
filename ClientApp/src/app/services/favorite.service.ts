@@ -20,8 +20,6 @@ export class FavoriteService {
 
     apiUrl = '/api/user/like';
 
-
-
   // This is the API call
   FavoriteAPICall(favorite): Observable<UserFavorite[]> {
     return this.http.get<UserFavorite[]>(this.apiUrl + `/${favorite.UserID}/${favorite.RIDBActivity}`)

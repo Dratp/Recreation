@@ -43,6 +43,11 @@ namespace Recreation.Controllers
             return db.GetLikes(userID, RIDBActivity);
         }
 
-
+        [HttpGet]
+        [Route("like/{userID}")]
+        public List<Likes> GetUserLikes(long userID)
+        {
+            return db.GetLikes(userID);
+        }
     }
 }
