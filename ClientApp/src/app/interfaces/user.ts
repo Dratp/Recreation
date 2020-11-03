@@ -6,3 +6,9 @@ export interface UserInfo {
   reason?: string;
   
 }
+
+export interface UserFavorite {
+  userID?: number;
+  activityname?: string;
+  activityid: number;
+}
