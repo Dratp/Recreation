@@ -8,20 +8,8 @@
     <div *ngFor="let activity of activities">
 
       <h4>{{activity.facilityName}} ({{activity.activity}})</h4>
-
-      <div id="content-wrapper">
-        <header id="header">
-          <h5>{{activity.facilityName}}</h5>
-        </header>
-        <section id="body">
-          <p>{{activity.facilityDescription}}</p>
-        </section>
-        <footer>
-          <button (click)="showDialog=!showDialog" class="btn">X</button>
-
-        </footer>
-
-      </div>
+      <app-facilitydescription></app-facilitydescription>
+      
 
       <!--<button (click)="showDialog = !showDialog" class="btn">More</button>
 
