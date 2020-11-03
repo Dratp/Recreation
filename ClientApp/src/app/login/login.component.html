@@ -16,7 +16,7 @@
   <br />
   <h1>Or Create a new profile:</h1>
   <br />
-  <fieldset class="pageLayout">
+  <form class="pageLayout">
     <ng-container *ngIf="!user.username">
       <input #firstNameBox type="text" placeholder="First Name" required />
       <br />
@@ -44,5 +44,5 @@
       <br />
       <button (click)="createUser(firstNameBox.value, lastNameBox.value, cityBox.value, stateBox.value, zipBox.value, newUserNameBox.value, passBox.value)">Create Profile</button>
     </ng-container>
-  </fieldset>
+  </form>
 </div>

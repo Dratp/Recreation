@@ -49,6 +49,13 @@ export class SignedInUserService {
     this.authUser(username, password).subscribe(results => this.SetUser(results));
   }
 
+  logout() {
+    this.currentUser.userName = "";
+    this.currentUser.password = "";
+    this.currentUser.userID = 0;
+    this.route.navigate([""]);
+  }
+
   validateUser(user: string, pass: string):
   boolean {
     if (user != '') {
