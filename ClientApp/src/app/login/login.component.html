@@ -1,7 +1,7 @@
 <div class="center">
   <h1>Please log in:</h1>
   <br />
-  <form class="pageLayout">
+  <fieldset class="pageLayout">
     <ng-container *ngIf="!user.username">
       <input #nameBox type="text" placeholder="Username" required />
       <br />
@@ -11,7 +11,7 @@
       <br />
       <button (click)="login(nameBox.value, passBox.value)">Login</button>
     </ng-container>
-  </form>
+  </fieldset>
   <br />
   <br />
   <h1>Or Create a new profile:</h1>

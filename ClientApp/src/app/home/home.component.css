@@ -1,22 +1,14 @@
-body {
-  
+* {
+  box-sizing: border-box;
 }
 
-.column1 {
+/* Create three equal columns that floats next to each other */
+.column {
+    position: absolute;
   float: left;
-  width: 20%;
+  width: 33.33%;
   padding: 10px;
-}
-
-.column2 {
-  width: 40%;
-  padding: 10px;
-}
-
-.column3 {
-  float: right;
-  width: 40%;
-  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
 }
 
 /* Clear floats after the columns */

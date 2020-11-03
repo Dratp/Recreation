@@ -1,1 +1,9 @@
-<p>favorites works!</p>
+<div *ngIf="user.username" class="nav-item" [routerLinkActive]="['link-active']">
+  <a class="nav-link text-dark" [routerLink]="['/']">Logout {{user.username}}</a>
+</div>
+
+<button (click)="logout()">Logout {{user.username}}</button>
+
+<div class="column" style="background-color:#bbb;">
+  <app-mapdisplay></app-mapdisplay>
+</div>
