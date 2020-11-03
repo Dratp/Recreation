@@ -16,7 +16,7 @@ export class ActivityComponent {
   activity: ActivityData;
   userFavorite: UserFavorite;
   activityname: string;
-  
+
 
   constructor(private activitydataservice: ActivityDataService, private userdataservice: SignedInUserService, private favoriteservice: FavoriteService) { }
 
@@ -45,6 +45,6 @@ export class ActivityComponent {
 
     this.favoriteservice.FavoriteManager(favorite);
     
+
   }
 }
-

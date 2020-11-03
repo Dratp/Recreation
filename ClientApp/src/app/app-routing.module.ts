@@ -6,6 +6,7 @@ import {ActivityComponent} from './activity/activity.component';
 import { LoginComponent } from './login/login.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { MapdisplayComponent } from './mapdisplay/mapdisplay.component';
+import { FacilitydescriptionComponent } from './facilitydescription/facilitydescription.component';
 
 
 const routes: Routes = [
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'activity', component: ActivityComponent },
   { path: 'login', component: LoginComponent },
   { path: 'favorites', component: FavoritesComponent },
-  { path: 'map', component: MapdisplayComponent }
+  { path: 'map', component: MapdisplayComponent },
+  { path: 'facilitydescription', component: FacilitydescriptionComponent }
 ]
 
 @NgModule({

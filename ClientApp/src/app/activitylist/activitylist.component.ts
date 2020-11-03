@@ -11,7 +11,8 @@ export class ActivitylistComponent implements OnInit {
 
   activities: ActivityData[];
   uniqueActs: string[];
-
+  
+  
   constructor(private activitydataservice: ActivityDataService) {
     this.uniqueActs = [];
     //this.activities = activitydataservice.getActivityDataList();
@@ -20,6 +21,7 @@ export class ActivitylistComponent implements OnInit {
   ngOnInit(): void {
     this.getActivityList();
   }
+
 
   getActivityList() {
     this.activitydataservice.getUniqueActivities().subscribe(
@@ -30,5 +32,8 @@ export class ActivitylistComponent implements OnInit {
     this.activitydataservice.ChosenActivity = activity;
   }
 
+  addPinToMap() {
+
+  }
 
 }

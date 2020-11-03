@@ -1,44 +1,35 @@
-
 <h1>Activities</h1>
 <div>
 
   <input [(ngModel)]="activityname" placeholder="Enter Activity">
-    <button (click)="getActivityByLocation(activityname)">Enter</button>
+  <button (click)="getActivityByLocation(activityname)">Enter</button>
 
-    <div *ngFor="let activity of activities">
 
-      <button>Map</button>
-      <h5>{{activity.id}}  {{activity.facilityName}} ({{activity.activity}})</h5>
-      <p>Description</p>
-      <button (click)="addLikedActivity(activity)">Fav</button>
-      <!--
-  <div id="content-wrapper">
-    <header id="header">
-      <h5>{{activity.facilityName}}</h5>
-    </header>
-    <section id="body">
-      <p>{{activity.facilityDescription}}</p>
-    </section>
-    <footer>
-      <button (click)="showDialog=!showDialog" class="btn">X</button>
 
-    </footer>
+  <div *ngFor="let activity of activities">
+
+    <!--<h4>{{activity.facilityName}} ({{activity.activity}})</h4>-->
+
+    <div id="content-wrapper">
+      <header id="header">
+        <button (click)="addPinToMap()" class="btn">[O]</button>
+        <a class="button" href="#popup">{{activity.facilityName}}</a><button (click)="addLikedActivity(activity)" class="btn">[X]</button>
+      </header>
+    </div>
+
+    <div id="popup" class="overlay">
+      <div class="popup">
+        <h2>{{activity.facilityName}}</h2>
+        <a class="close" href="#">&times;</a>
+        <div class="content">
+          <p>{{activity.facilityDescription}}</p>
+        </div>
+      </div>
 
     </div>
-        -->
 
-      <!--<button (click)="showDialog = !showDialog" class="btn">More</button>
-
-  <app-dialog visible="showDialog">
-
-    <button (click)="showDialog = !showDialog">X</button>
-  </app-dialog>-->
-
-    </div>
-  
+  </div>
 
 </div>
-
-
 
 
