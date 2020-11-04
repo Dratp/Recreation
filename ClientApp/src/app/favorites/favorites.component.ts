@@ -23,7 +23,7 @@ export class FavoritesComponent implements OnInit {
 
     console.log(this.UserService.userId)
     console.log(this.favoritesService.favorites)
-    this.favorites = this.favoriteService.favorites
+    this.favorites = this.favoritesService.favorites
   }
 
   callLogout() {
