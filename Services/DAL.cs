@@ -28,7 +28,7 @@ namespace Recreation.Services
             newUser.UserID = id;
             return newUser;
         }
-        
+
 
         public List<ActivityData> GetActivityDataList()
         {
@@ -36,9 +36,11 @@ namespace Recreation.Services
             return data;
         }
 
-        public List<Likes> GetLikes(long userID)
+        public List<SavedLikeInfo> GetLikes(long userID)
         {
-            List<Likes> data = db.Query<Likes>($"SELECT * FROM [Likes] WHERE UserID = {userID}").AsList<Likes>();
+            List<SavedLikeInfo> data = db.Query<SavedLikeInfo>($"SELECT Likes.id, Likes.UserID, Likes.RIDBActivity, RIDBAct.FacilityID, RIDB.FacilityName, RIDB.FacilityLatitude, RIDB.FacilityLongitude, RIDB.FacilityTypeDescription From RIDB Join RIDBAct On RIDB.FacilityID = RIDBAct.FacilityID Join Likes On Likes.RIDBActivity = RIDBAct.id Where UserID = { userID}").AsList<SavedLikeInfo>();
+
+            //This pulls data 
             return data;
         }
 
@@ -46,10 +48,10 @@ namespace Recreation.Services
         public List<Likes> GetLikes(long userID, long activityID)
         {
             List<Likes> data = db.Query<Likes>($"SELECT * FROM [Likes] WHERE UserID = {userID}").AsList<Likes>();
-            
-            foreach(Likes like in data)
+
+            foreach (Likes like in data)
             {
-                if(activityID == like.RIDBActivity)
+                if (activityID == like.RIDBActivity)
                 {
                     DeleteLike(like);
                     data.Remove(like);
@@ -57,11 +59,12 @@ namespace Recreation.Services
                 }
             }
 
-            long id = AddLike(userID,activityID);
-            data.Add(new Likes() { 
+            long id = AddLike(userID, activityID);
+            data.Add(new Likes()
+            {
                 ID = id,
                 UserID = userID,
-                RIDBActivity = activityID 
+                RIDBActivity = activityID
             }
             );
             return data;
@@ -94,7 +97,8 @@ namespace Recreation.Services
                 User user = db.QuerySingle<User>($"SELECT * FROM [Users] WHERE UserName = '{userName}'");
                 return user;
             }
-            catch { 
+            catch
+            {
                 User user = new User();
                 return user;
             }
@@ -116,7 +120,7 @@ namespace Recreation.Services
             }
             else
             {
-                return new { response = true, userID = user.UserID ,userName = user.UserName, reason = "Success!" };
+                return new { response = true, userID = user.UserID, userName = user.UserName, reason = "Success!" };
             }
         }
 

@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { UserInfo, UserFavorite } from '../interfaces/user';
+import { UserInfo, UserFavorite, SavedLikeInfo } from '../interfaces/user';
 import { Observable } from 'rxjs';
 import { ActivityComponent } from '../activity/activity.component';
+import { SignedInUserService } from './signed-in-user.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,9 +13,11 @@ export class FavoriteService {
   activity: ActivityComponent;
   favorite: UserFavorite;
   favorites: UserFavorite[];
+  userInfo: UserInfo;
+  
 
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private signinuserservice: SignedInUserService) {
     this.favorites = [];
   }
 
@@ -44,6 +47,24 @@ export class FavoriteService {
   PopulateFavs(favs: UserFavorite[]) {
     for (let i = 0; i < favs.length; i++) {
       this.favorites.push(favs[i]);
+    }
+  }
+  //api call
+  GetFavoriteList(userID: number): Observable<SavedLikeInfo []>{
+
+    console.log(userID, 'at GetFavoriteList in favorite service')
+
+    return this.http.get<SavedLikeInfo[]>(this.apiUrl + `/${userID}`);
+    
+  }
+
+  GetUserFavorites(userID: number) {
+    this.GetFavoriteList(userID).subscribe(results => this.makeFavoriteList(results));
+  }
+
+  makeFavoriteList(favsinfo: SavedLikeInfo[]) {
+    for (let i = 0; i < favsinfo.length; i++) {
+      this.favorites.push(favsinfo[i]);
     }
   }
 
