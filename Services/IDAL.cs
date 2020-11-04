@@ -16,7 +16,7 @@ namespace Recreation.Services
 
         public List<Likes> GetLikes(long userID, long activityID);
 
-        public List<Likes> GetLikes(long userID);
+        public List<SavedLikeInfo> GetLikes(long userID);
 
         public User GetUser(string userName);
 
