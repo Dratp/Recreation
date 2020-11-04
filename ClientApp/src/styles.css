@@ -61,90 +61,96 @@ section {
   width: 100%;
   height: 100%;
 }
+/* For Simplicity, leaves were placed in locations so the sideways scroll bar would not appear during animations
 
+    each leaf is delayed by 1 additional second
+*/
 
 #leaf1 {
   opacity: 0;
   left: 60%;
   animation: animate 30s linear infinite;
-  animation-delay: 5s;
+  animation-delay: 1s;
 }
 
 #leaf2 {
   opacity: 0;
-  left: 20%;
+  left: 30%;
   animation: animate 30s linear infinite;
-  animation-delay: 3s;
+  animation-delay: 2s;
 }
 
 #leaf3 {
   opacity: 0;
   left: 40%;
   animation: animate 30s linear infinite;
-  animation-delay: 2s;
+  animation-delay: 3s;
 }
 
 #leaf4 {
   opacity: 0;
-  left: 80%;
+  left: 70%;
+  animation: animate 30s linear infinite;
+  animation-delay: 4s;
+}
+    
+
+#leaf5 {
+  opacity: 0;
+  left: 50%;
   animation: animate 30s linear infinite;
   animation-delay: 5s;
 }
 
-#leaf5 {
-  opacity: 0;
-  left: 75%;
-  animation: animate 30s linear infinite;
-  animation-delay: 1s;
-}
-
 #leaf6 {
   opacity: 0;
-  left: 25%;
+  left: 55%;
   animation: animate 30s linear infinite;
-  animation-delay: 10s;
+  animation-delay: 6s;
 }
+    
+
 
 #leaf7 {
   opacity: 0;
-  left: 20%;
-  animation: animate 30s linear infinite;
-  animation-delay: 8s;
+  left: 40%;
+  animation: animate2 30s linear infinite;
+  animation-delay: 7s;
 }
 
 #leaf8 {
   opacity: 0;
-  left: 80%;
+  left: 50%;
   animation: animate 25s linear infinite;
-  animation-delay: 4s;
+  animation-delay: 8s;
 }
 
 #leaf9 {
   opacity: 0;
-  left: 30%;
+  left: 35%;
   animation: animate2 30s linear infinite;
-  animation-delay: 8s;
+  animation-delay: 9s;
 }
 
 #leaf10 {
   opacity: 0;
-  left: 40%;
+  left: 45%;
   animation: animate2 30s linear infinite;
-  animation-delay: 0s;
+  animation-delay: 10s;
 }
 
 #leaf11 {
   opacity: 0;
-  left: 50%;
+  left: 55%;
   animation: animate2 30s linear infinite;
-  animation-delay: 6s;
+  animation-delay: 11s;
 }
 
 #leaf12 {
   opacity: 0;
   left: 65%;
   animation: animate2 30s linear infinite;
-  animation-delay: 5s;
+  animation-delay: 12s;
 }
 
 
@@ -216,11 +222,6 @@ section {
   }
 }
 
-.set2 {
-  transform: rotateY(180deg);
-  filter: blur(2px);
-}
-
 
 img {
   position: absolute;
@@ -252,110 +253,3 @@ img {
     animation-timing-function: cubic-bezier(0.990, 0.000, 0.890, 0.435);
   }
 }
-
-@keyframes fall {
-  60% {
-    
-  }
-
-  100% {
-    margin-top: 100px;
-    
-  }
-}
-
-/*
-
-@keyframes sway {
-  0% {
-    transform: rotateZ(-15deg) rotateX(55deg);
-  }
-
-  30% {
-    transform: rotateZ(20deg) rotateX(60deg);
-    animation-timing-function: ease-in-out;
-  }
-
-  60% {
-    transform: rotateZ(-20deg) rotateX(55deg);
-    animation-timing-function: ease-in-out;
-  }
-
-  100% {
-    transform: rotateZ(0deg) rotateX(58deg);
-    animation-timing-function: cubic-bezier(0.990, 0.000, 0.890, 0.435);
-  }
-}
-
-@keyframes fall {
-  60% {
-    -webkit-filter: drop-shadow(0px 60px 40px rgba(0,0,0,0));
-  }
-
-  100% {
-    margin-top: 500px;
-    -webkit-filter: drop-shadow(0px 5px 8px rgba(0,0,0,0.6));
-  }
-}
-
-body {
-  margin: 0;
-}
-
-container#fall-container {
-  height: 200px;
-  overflow: hidden;
-  position: relative;
-  perspective-origin: center;
-  perspective: 900px;
-}
-
-img {
-  position: absolute;
-  width: 28%;
-  transform-origin: 0px -400px 0px;
-  animation-name: fall, sway;
-  animation-duration: 7s, 8s;
-  animation-fill-mode: both;
-  animation-timing-function: linear, ease-in-out;
-}
-
-#leaf1 {
-  top: -60px;
-}
-
-#leaf2 {
-  top: -45px;
-  left: 50%;
-  animation-delay: 2s;
-  transform: rotateX(58deg);
-}
-
-#leaf3 {
-  width: 28%;
-  top: -122px;
-  left: 22%;
-  animation-delay: 3.2s;
-}
-
-#leaf4 {
-  width: 25%;
-  top: -55px;
-  left: 38%;
-  animation-delay: 4.4s;
-}
-
-#leaf5 {
-  width: 28%;
-  top: -18px;
-  left: 70%;
-  animation-delay: 2.25s;
-}
-
-#leaf6 {
-  width: 23%;
-  top: 0px;
-  left: 55%;
-  animation-delay: 3.8s;
-}
-*/
