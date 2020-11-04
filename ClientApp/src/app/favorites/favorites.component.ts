@@ -11,11 +11,16 @@ import { FavoriteService } from '../services/favorite.service';
 })
 export class FavoritesComponent implements OnInit {
   user: UserInfo;
-  favorite: UserFavorite[];
+  favorites: UserFavorite[];
+  
+ 
 
-  constructor(private UserService: SignedInUserService, private route: Router, private favorites: FavoriteService) { }
+  constructor(private UserService: SignedInUserService, private route: Router, private favoritesService: FavoriteService) { }
 
   ngOnInit() {
+    this.favoritesService.GetFavoriteList(this.user.userID).subscribe(
+      (data: UserFavorite[]) => this.favorites = data)
+
   }
 
   callLogout() {
