@@ -233,23 +233,4 @@ img {
   animation-timing-function: linear, ease-in-out;
 }
 
-@keyframes sway {
-  0% {
-    transform: rotateZ(-15deg) rotateX(55deg);
-  }
 
-  30% {
-    transform: rotateZ(20deg) rotateX(60deg);
-    animation-timing-function: ease-in-out;
-  }
-
-  60% {
-    transform: rotateZ(-20deg) rotateX(55deg);
-    animation-timing-function: ease-in-out;
-  }
-
-  100% {
-    transform: rotateZ(0deg) rotateX(58deg);
-    animation-timing-function: cubic-bezier(0.990, 0.000, 0.890, 0.435);
-  }
-}
