@@ -50,7 +50,9 @@ export class ActivityComponent {
   }
 
   FavoriteCheck(id: number) {
+    console.log(this.favoriteservice.favorites)
     for (let i = 0; i < this.favoriteservice.favorites.length; i++) {
+      
       if (id == this.favoriteservice.favorites[i].RIDBActivity) {
         return true;
       }
