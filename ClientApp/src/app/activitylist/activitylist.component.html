@@ -1,7 +1,5 @@
-
-<p>Activity List</p>
+<h4>Activity List</h4>
 <br />
-{{this.activitydataservice.ChosenActivity}}
 
 <ul class="activitylist">
   <li *ngFor="let activity of uniqueActs" [class.selected]="activity === chosenActivity" (click)="chooseActivity(activity)">
