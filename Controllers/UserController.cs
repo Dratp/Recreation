@@ -47,7 +47,9 @@ namespace Recreation.Controllers
         [Route("like/{userID}")]
         public List<Likes> GetUserLikes(long userID)
         {
+
             return db.GetLikes(userID);
+            //Returns likes
         }
     }
 }

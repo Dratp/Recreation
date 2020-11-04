@@ -11,16 +11,19 @@ import { FavoriteService } from '../services/favorite.service';
 })
 export class FavoritesComponent implements OnInit {
   user: UserInfo;
-  favorites: UserFavorite[];
+  favorites : UserFavorite[]
   
  
 
   constructor(private UserService: SignedInUserService, private route: Router, private favoritesService: FavoriteService) { }
 
   ngOnInit() {
-    this.favoritesService.GetFavoriteList(this.user.userID).subscribe(
-      (data: UserFavorite[]) => this.favorites = data)
+    this.favoritesService.GetUserFavorites(this.UserService.userId);
 
+
+    console.log(this.UserService.userId)
+    console.log(this.favoritesService.favorites)
+    this.favorites = this.favoriteService.favorites
   }
 
   callLogout() {
@@ -28,6 +31,13 @@ export class FavoritesComponent implements OnInit {
     this.UserService.logout();
   }
 
+
+  //getFavoriteList(userId: number) {
+  //  this.favoritesService.GetFavoriteList
+  //    (userId).subscribe(
+  //      results => (this.favorites = results));
+
+   // console.log(this.UserService.userId) // this prints}
 
 
   }

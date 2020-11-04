@@ -49,10 +49,23 @@ export class FavoriteService {
       this.favorites.push(favs[i]);
     }
   }
+  //api call
+  GetFavoriteList(userID: number): Observable<UserFavorite[]>{
 
-  GetFavoriteList(userID: number){
-    return this.http.get(this.apiUrl + `/${userID}`)
+    console.log(userID, 'at GetFavoriteList in favorite service')
 
+    return this.http.get<UserFavorite[]>(this.apiUrl + `/${userID}`);
+    
+  }
+
+  GetUserFavorites(userID: number) {
+    this.GetFavoriteList(userID).subscribe(results => this.makeFavoriteList(results));
+  }
+
+  makeFavoriteList(favs: UserFavorite[]) {
+    for (let i = 0; i < favs.length; i++) {
+      this.favorites.push(favs[i]);
+    }
   }
 
 }
