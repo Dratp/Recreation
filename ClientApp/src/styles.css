@@ -1,6 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
-
-/* Provide sufficient contrast against white background */
+html {
+  height: 100%;
+}
 
 .btn-primary {
   color: #fff;
@@ -10,7 +10,7 @@
 
 .left {
   position: absolute;
-  background-color: #000;
+  background-color: #000000;
   width: 10%;
   left: 5%;
   top: 10%;
@@ -19,11 +19,15 @@
 
 .middle {
   position: absolute;
-  background-color: #00ffff;
+  background-color: #1787E6;
   width: 25%;
   left: 20%;
   top: 10%;
   z-index: 100;
+}
+
+.middle:hover{
+    border: 
 }
 
 .right {
@@ -35,9 +39,9 @@
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
+  background-image: linear-gradient(to top, #9465DE, #7614EC, #F0498E, #EE3F5E, #EE6D3F, #E49124, #ECCB14);
+  background-repeat: no-repeat;
+  height: 100%;
 }
 
 section {
@@ -46,65 +50,53 @@ section {
   height: 100%;
 }
 
-.set {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-}
-
-  .set div {
-    position: absolute;
-    display: block;
-  }
 
 #leaf1 {
   opacity: 0;
   left: 60%;
-  animation: animate 25s linear infinite;
+  animation: animate 30s linear infinite;
   animation-delay: 5s;
 }
 
 #leaf2 {
   opacity: 0;
   left: 20%;
-  animation: animate 29s linear infinite;
+  animation: animate 30s linear infinite;
   animation-delay: 3s;
 }
 
 #leaf3 {
   opacity: 0;
   left: 40%;
-  animation: animate 35s linear infinite;
+  animation: animate 30s linear infinite;
   animation-delay: 2s;
 }
 
 #leaf4 {
   opacity: 0;
   left: 0%;
-  animation: animate 25s linear infinite;
+  animation: animate 30s linear infinite;
   animation-delay: 5s;
 }
 
 #leaf5 {
   opacity: 0;
   left: 80%;
-  animation: animate 28s linear infinite;
+  animation: animate 30s linear infinite;
   animation-delay: 1s;
 }
 
 #leaf6 {
   opacity: 0;
   left: 15%;
-  animation: animate 22s linear infinite;
+  animation: animate 30s linear infinite;
   animation-delay: 10s;
 }
 
 #leaf7 {
   opacity: 0;
   left: 55%;
-  animation: animate 34s linear infinite;
+  animation: animate 30s linear infinite;
   animation-delay: 8s;
 }
 
@@ -112,8 +104,37 @@ section {
   opacity: 0;
   left: 90%;
   animation: animate 25s linear infinite;
-  animation-delay: 12s;
+  animation-delay: 4s;
 }
+
+#leaf9 {
+  opacity: 0;
+  left: 25%;
+  animation: animate2 30s linear infinite;
+  animation-delay: 8s;
+}
+
+#leaf10 {
+  opacity: 0;
+  left: 0%;
+  animation: animate2 30s linear infinite;
+  animation-delay: 0s;
+}
+
+#leaf11 {
+  opacity: 0;
+  left: 50%;
+  animation: animate2 30s linear infinite;
+  animation-delay: 6s;
+}
+
+#leaf12 {
+  opacity: 0;
+  left: 75%;
+  animation: animate2 30s linear infinite;
+  animation-delay: 5s;
+}
+
 
 @keyframes animate {
   0% {
@@ -124,27 +145,62 @@ section {
 
   10% {
     opacity: 1;
+    transform: translateX(-40px) rotate(45deg)
   }
 
   20% {
-    transform: translateX(-20px) rotate(45deg)
+    transform: translateX(80px) rotate(-45deg)
   }
 
   40% {
-    transform: translateX(-20px) rotate(90deg)
+    transform: translateX(-100px) rotate(45deg)
   }
 
   60% {
-    transform: translateX(20px) rotate(45deg)
+    transform: translateX(120px) rotate(-45deg)
   }
 
   80% {
-    transform: translateX(-20px) rotate(90deg)
+    transform: translateX(-140px) rotate(45deg)
   }
 
   100% {
     top: 110%;
-    transform: translateX(-20px) rotate(45deg)
+    transform: translateX(160px) rotate(-45deg)
+  }
+}
+
+@keyframes animate2 {
+  0% {
+    top: -10%;
+    opacity: 0;
+    transform: translateX(-20px) rotate(0deg)
+  }
+
+  10% {
+    opacity: 1;
+    transform: translateX(40px) rotate(45deg)
+  }
+
+  20% {
+    transform: translateX(-80px) rotate(-45deg)
+  }
+
+  40% {
+    transform: translateX(100px) rotate(45deg)
+  }
+
+  60% {
+    transform: translateX(-120px) rotate(-45deg)
+  }
+
+  80% {
+    transform: translateX(140px) rotate(45deg)
+  }
+
+  100% {
+    top: 110%;
+    transform: translateX(-160px) rotate(-45deg)
   }
 }
 
@@ -153,10 +209,6 @@ section {
   filter: blur(2px);
 }
 
-.set3 {
-  transform: scale(0.8) rotateX(180deg);
-  filter: blur(4px);
-}
 
 img {
   position: absolute;
@@ -165,7 +217,6 @@ img {
   transform-origin: 0px -400px 0px;
   animation-name: fall, sway;
   animation-duration: 7s, 8s;
-  animation-fill-mode: both;
   animation-timing-function: linear, ease-in-out;
 }
 
