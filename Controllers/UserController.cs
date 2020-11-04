@@ -24,7 +24,7 @@ namespace Recreation.Controllers
         public User CreateUser(User newUser)
         {
             //HTTPPost does not reach this point!
-            User user = CreateUser(newUser);
+            User user = db.CreateUser(newUser);
             user.Password = "";
             return user;
         }

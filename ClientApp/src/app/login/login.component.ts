@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SignedInUserService } from '../services/signed-in-user.service';
-import { UserInfo } from '../interfaces/user';
+import { UserInfo, CreatedUser } from '../interfaces/user';
 
 
 @Component({
@@ -11,6 +11,7 @@ import { UserInfo } from '../interfaces/user';
 })
 export class LoginComponent implements OnInit {
   user: UserInfo;
+  newUser: CreatedUser;
 
   constructor(private UserService: SignedInUserService, private route: Router) {
     this.user = {};
@@ -26,9 +27,11 @@ export class LoginComponent implements OnInit {
     }
   }
 
-
-  CreateUser(firstNameBox: string, lastNameBox: string, cityBox: string, stateBox: string, zipBox: string, newUserNameBox: string, passBox: string) {
-    this.UserService.CreateUser(firstNameBox, lastNameBox, cityBox, stateBox, zipBox, newUserNameBox, passBox);
-  };
+  createProfile(firstName: string, lastName: string, zip: string, newUserName: string, pass: string) {
+    this.UserService.CreateUser(firstName, lastName, zip, newUserName, pass);
+  }
+  /*createUser(firstName: string, lastName: string, city: string, state: string, zip: string, newUserName: string, pass: string) {
+    this.UserService.CreateUser(firstName, lastName, city, state, zip, newUserName, pass);
+  };*/
 
 }

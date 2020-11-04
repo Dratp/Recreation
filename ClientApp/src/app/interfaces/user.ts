@@ -20,8 +20,8 @@ export interface CreatedUser {
   firstName: string;
   lastName: string;
   zip: string;
-  city: string;
-  state: string;
+  city?: string;
+  state?: string;
 }
 
 export interface SavedLikeInfo {
