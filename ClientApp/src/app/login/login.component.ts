@@ -27,8 +27,8 @@ export class LoginComponent implements OnInit {
   }
 
 
-  createUser(firstNameBox: string, lastNameBox: string, cityBox: string, stateBox: string, zipBox: string, newUserNameBox: string, passBox: string) {
-
+  CreateUser(firstNameBox: string, lastNameBox: string, cityBox: string, stateBox: string, zipBox: string, newUserNameBox: string, passBox: string) {
+    this.UserService.CreateUser(firstNameBox, lastNameBox, cityBox, stateBox, zipBox, newUserNameBox, passBox);
   };
 
 }

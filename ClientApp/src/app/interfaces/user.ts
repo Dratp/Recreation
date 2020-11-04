@@ -12,3 +12,14 @@ export interface UserFavorite {
   UserID?: number;
   RIDBActivity: number;
 }
+
+export interface CreatedUser {
+  userID?: number;
+  userName: string;
+  password: string;
+  firstName: string;
+  lastName: string;
+  zip: string;
+  city: string;
+  state: string;
+}

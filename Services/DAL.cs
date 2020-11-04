@@ -22,30 +22,23 @@ namespace Recreation.Services
         }
 
 
-        public User CreateUser(string userName, string password, string firstName, string lastName, string zip, string city, string state)
+        public User CreateUser(User newUser)
         {
-            User user = new User()
-            {
-                UserName = userName,
-                Password = password,
-                FirstName = firstName,
-                LastName = lastName,
-                ZIP = zip,
-                City = city,
-                State = state
-            };
-
-            long id = db.Insert(user);
-
-            user.UserID = id;
-
-            return user;
+            long id = db.Insert(newUser);
+            newUser.UserID = id;
+            return newUser;
         }
         
 
         public List<ActivityData> GetActivityDataList()
         {
             List<ActivityData> data = db.Query<ActivityData>("SELECT RIDBAct.id, RIDB.FacilityID, RIDB.FacilityName, RIDBAct.Activity, RIDB.FacilityLatitude, RIDB.FacilityLongitude, RIDB.FacilityDescription FROM RIDB JOIN RIDBAct on RIDB.FacilityID=RIDBAct.FacilityID").AsList<ActivityData>();
+            return data;
+        }
+
+        public List<Likes> GetLikes(long userID)
+        {
+            List<Likes> data = db.Query<Likes>($"SELECT * FROM [Likes] WHERE UserID = {userID}").AsList<Likes>();
             return data;
         }
 

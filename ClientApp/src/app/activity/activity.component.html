@@ -2,20 +2,26 @@
 <div>
 
   <input [(ngModel)]="activityname" placeholder="Enter Activity">
-  <button (click)="getActivityByLocation(activityname)">Enter</button>
+
+  <button (click)="activitydataservice.populateList(activityname)">Enter</button>
 
 
+  <div *ngFor="let activity of activitydataservice.activities">
 
-  <div *ngFor="let activity of activities">
+    <div>
+      <div id="content-wrapper">
+        <header id="header">
+          <a class="button" href="#popup">{{activity.facilityName}} ({{activity.activity}})</a>
 
-    <!--<h4>{{activity.facilityName}} ({{activity.activity}})</h4>-->
+          <div *ngIf="userdataservice.username" class="button">
+            <button (click)="addLikedActivity(activity)" class="btn">♥</button>
+          </div>
 
-    <div id="content-wrapper">
-      <header id="header">
-        <button (click)="addPinToMap()" class="btn">[O]</button>
-        <a class="button" href="#popup">{{activity.facilityName}}</a><button (click)="addLikedActivity(activity)" class="btn">[X]</button>
-      </header>
+
+        </header>
+      </div>
     </div>
+    
 
     <div id="popup" class="overlay">
       <div class="popup">
@@ -31,5 +37,3 @@
   </div>
 
 </div>
-
-

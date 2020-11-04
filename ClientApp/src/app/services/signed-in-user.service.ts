@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { UserInfo } from '../interfaces/user';
+import { UserInfo, CreatedUser } from '../interfaces/user';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
+import { state } from '@angular/animations';
 
 @Injectable({
   providedIn: 'root'
@@ -18,13 +19,23 @@ export class SignedInUserService {
   userResponse: boolean;
   userReason: string;
   apiUrl = '/api/User/Login';
-  
+
+  newUser: CreatedUser;
 
   constructor(private http: HttpClient, private route: Router) {
     this.username = "";
     this.userId = 0;
     this.userResponse = false;
     this.userReason = "";
+    this.newUser = { firstName: "", lastName: "", city: "", state: "", zip: "", userName: "", password: ""};
+  }
+
+  CreateUser(firstNameBox: string, lastNameBox: string, cityBox: string, stateBox: string, zipBox: string, newUserNameBox: string, passBox: string) {
+    this.newUser = { firstName: firstNameBox, lastName: lastNameBox, city: cityBox, state: stateBox, zip: zipBox, userName: newUserNameBox, password: passBox };
+
+    //Not posting! :(
+    this.http.post<CreatedUser>(`/api/User/new`, this.newUser);
+    console.log(this.newUser);
   }
 
   // This is the function that actually does something in this case sets the username and user ID
