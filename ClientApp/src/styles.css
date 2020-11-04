@@ -14,6 +14,7 @@
   width: 10%;
   left: 5%;
   top: 10%;
+  z-index: 100;
 }
 
 .middle {
@@ -22,12 +23,276 @@
   width: 25%;
   left: 20%;
   top: 10%;
+  z-index: 100;
 }
 
 .right {
   position: absolute;
-  background-color: #808080;
   width: 50%;
   left: 50%;
   top: 10%;
+  z-index: 100;
 }
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+section {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.set {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+  .set div {
+    position: absolute;
+    display: block;
+  }
+
+#leaf1 {
+  opacity: 0;
+  left: 60%;
+  animation: animate 25s linear infinite;
+  animation-delay: 5s;
+}
+
+#leaf2 {
+  opacity: 0;
+  left: 20%;
+  animation: animate 29s linear infinite;
+  animation-delay: 3s;
+}
+
+#leaf3 {
+  opacity: 0;
+  left: 40%;
+  animation: animate 35s linear infinite;
+  animation-delay: 2s;
+}
+
+#leaf4 {
+  opacity: 0;
+  left: 0%;
+  animation: animate 25s linear infinite;
+  animation-delay: 5s;
+}
+
+#leaf5 {
+  opacity: 0;
+  left: 80%;
+  animation: animate 28s linear infinite;
+  animation-delay: 1s;
+}
+
+#leaf6 {
+  opacity: 0;
+  left: 15%;
+  animation: animate 22s linear infinite;
+  animation-delay: 10s;
+}
+
+#leaf7 {
+  opacity: 0;
+  left: 55%;
+  animation: animate 34s linear infinite;
+  animation-delay: 8s;
+}
+
+#leaf8 {
+  opacity: 0;
+  left: 90%;
+  animation: animate 25s linear infinite;
+  animation-delay: 12s;
+}
+
+@keyframes animate {
+  0% {
+    top: -10%;
+    opacity: 0;
+    transform: translateX(20px) rotate(0deg)
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  20% {
+    transform: translateX(-20px) rotate(45deg)
+  }
+
+  40% {
+    transform: translateX(-20px) rotate(90deg)
+  }
+
+  60% {
+    transform: translateX(20px) rotate(45deg)
+  }
+
+  80% {
+    transform: translateX(-20px) rotate(90deg)
+  }
+
+  100% {
+    top: 110%;
+    transform: translateX(-20px) rotate(45deg)
+  }
+}
+
+.set2 {
+  transform: rotateY(180deg);
+  filter: blur(2px);
+}
+
+.set3 {
+  transform: scale(0.8) rotateX(180deg);
+  filter: blur(4px);
+}
+
+img {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  transform-origin: 0px -400px 0px;
+  animation-name: fall, sway;
+  animation-duration: 7s, 8s;
+  animation-fill-mode: both;
+  animation-timing-function: linear, ease-in-out;
+}
+
+@keyframes sway {
+  0% {
+    transform: rotateZ(-15deg) rotateX(55deg);
+  }
+
+  30% {
+    transform: rotateZ(20deg) rotateX(60deg);
+    animation-timing-function: ease-in-out;
+  }
+
+  60% {
+    transform: rotateZ(-20deg) rotateX(55deg);
+    animation-timing-function: ease-in-out;
+  }
+
+  100% {
+    transform: rotateZ(0deg) rotateX(58deg);
+    animation-timing-function: cubic-bezier(0.990, 0.000, 0.890, 0.435);
+  }
+}
+
+@keyframes fall {
+  60% {
+    
+  }
+
+  100% {
+    margin-top: 100px;
+    
+  }
+}
+
+/*
+
+@keyframes sway {
+  0% {
+    transform: rotateZ(-15deg) rotateX(55deg);
+  }
+
+  30% {
+    transform: rotateZ(20deg) rotateX(60deg);
+    animation-timing-function: ease-in-out;
+  }
+
+  60% {
+    transform: rotateZ(-20deg) rotateX(55deg);
+    animation-timing-function: ease-in-out;
+  }
+
+  100% {
+    transform: rotateZ(0deg) rotateX(58deg);
+    animation-timing-function: cubic-bezier(0.990, 0.000, 0.890, 0.435);
+  }
+}
+
+@keyframes fall {
+  60% {
+    -webkit-filter: drop-shadow(0px 60px 40px rgba(0,0,0,0));
+  }
+
+  100% {
+    margin-top: 500px;
+    -webkit-filter: drop-shadow(0px 5px 8px rgba(0,0,0,0.6));
+  }
+}
+
+body {
+  margin: 0;
+}
+
+container#fall-container {
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  perspective-origin: center;
+  perspective: 900px;
+}
+
+img {
+  position: absolute;
+  width: 28%;
+  transform-origin: 0px -400px 0px;
+  animation-name: fall, sway;
+  animation-duration: 7s, 8s;
+  animation-fill-mode: both;
+  animation-timing-function: linear, ease-in-out;
+}
+
+#leaf1 {
+  top: -60px;
+}
+
+#leaf2 {
+  top: -45px;
+  left: 50%;
+  animation-delay: 2s;
+  transform: rotateX(58deg);
+}
+
+#leaf3 {
+  width: 28%;
+  top: -122px;
+  left: 22%;
+  animation-delay: 3.2s;
+}
+
+#leaf4 {
+  width: 25%;
+  top: -55px;
+  left: 38%;
+  animation-delay: 4.4s;
+}
+
+#leaf5 {
+  width: 28%;
+  top: -18px;
+  left: 70%;
+  animation-delay: 2.25s;
+}
+
+#leaf6 {
+  width: 23%;
+  top: 0px;
+  left: 55%;
+  animation-delay: 3.8s;
+}
+*/
