@@ -47,7 +47,16 @@ export class ActivityComponent {
     }
 
     this.favoriteservice.FavoriteManager(favorite);
-    
-
   }
+
+  FavoriteCheck(id: number) {
+    for (let i = 0; i < this.favoriteservice.favorites.length; i++) {
+      if (id == this.favoriteservice.favorites[i].RIDBActivity) {
+        return true;
+      }
+    }
+
+    return false;
+  }
+
 }

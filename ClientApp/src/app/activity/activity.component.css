@@ -103,3 +103,18 @@ h1 {
   .popup p:last-child {
     margin: 0;
   }
+
+  .scrollbox{
+    height: 567px;
+    width: 100%;
+    overflow-y: scroll;
+    background-color: aliceblue;
+  }
+
+  .megusta{
+      color: red;
+  }
+
+.nomegusta {
+  color: #a8a0a2;
+}

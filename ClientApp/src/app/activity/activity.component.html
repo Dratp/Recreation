@@ -5,35 +5,40 @@
 
   <button (click)="activitydataservice.populateList(activityname)">Enter</button>
 
+  <div class="scrollbox">
+    <div *ngFor="let activity of activitydataservice.activities">
 
-  <div *ngFor="let activity of activitydataservice.activities">
 
-    <div>
       <div id="content-wrapper">
         <header id="header">
-          <a class="button" href="#popup">{{activity.facilityName}} ({{activity.activity}})</a>
-
           <div *ngIf="userdataservice.username" class="button">
-            <button (click)="addLikedActivity(activity)" class="btn">♥</button>
+            <a class="button" href="#popup">{{activity.id}}{{activity.facilityName}} ({{activity.activity}})</a>
+            <span *ngIf="FavoriteCheck(activity.id)"><button (click)="addLikedActivity(activity)" class="megusta">♥</button></span>
+            <span *ngIf="!FavoriteCheck(activity.id)"><button (click)="addLikedActivity(activity)" class="nomegusta">♥</button></span>
+          </div>
+
+          <div *ngIf="!userdataservice.username" class="button">
+            <a class="button" href="#popup">{{activity.facilityName}} ({{activity.activity}})</a>
+
           </div>
 
 
         </header>
       </div>
-    </div>
-    
 
-    <div id="popup" class="overlay">
-      <div class="popup">
-        <h2>{{activity.facilityName}}</h2>
-        <a class="close" href="#">&times;</a>
-        <div class="content">
-          <p>{{activity.facilityDescription}}</p>
+
+
+      <div id="popup" class="overlay">
+        <div class="popup">
+          <h2>{{activity.facilityName}}</h2>
+          <a class="close" href="#">&times;</a>
+          <div class="content">
+            <p>{{activity.facilityDescription}}</p>
+          </div>
         </div>
+
       </div>
 
     </div>
-
   </div>
-
 </div>
