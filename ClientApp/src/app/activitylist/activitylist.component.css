@@ -9,7 +9,7 @@
     cursor: pointer;
     position: relative;
     left: 20px;
-    background-color: #7EBCE5;
+    background-color: #D08E28;
     margin: .5em;
     padding: .3em 0;
     height: 1.5em;
@@ -23,12 +23,12 @@
     }
 
     .activitylist li.selected {
-      background-color: #CFD8DC;
+      background-color: #F5F5AF;
       color: white;
     }
 
       .activitylist li.selected:hover {
-        background-color: #BBD8DC;
+        background-color: #F5F5AF;
         color: white;
       }
 
@@ -42,14 +42,13 @@
     top: -6px;
     height: 1.8em;
     margin-right: .8em;
-    border-radius: 4px 0 0 4px;
-    
+    border-radius: 4px 0 0 4px; 
   }
 
-  p{
-      font-size: medium;
-      top: auto;
-      color: #FFFFFF;
-      position:center;
-      margin-left: 45px;
-  }
+h4 {
+  text-align: center;
+  font-family: "Trebuchet MS", Tahoma, Arial, sans-serif;
+  color: #FFFFFF;
+  text-shadow: 0 1px 0 #fff;
+  margin: 50px 0;
+}

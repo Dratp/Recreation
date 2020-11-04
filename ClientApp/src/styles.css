@@ -10,25 +10,34 @@ html {
 
 .left {
   position: absolute;
-  background-color: #000000;
+  background-color: #DEC19B;
   width: 10%;
   left: 5%;
   top: 10%;
   z-index: 100;
+  border: solid 5px #000000;
+  transition: border-width .5s linear;
 }
 
+.left:hover {
+  border-width: 10px;
+  /* ANIMATED ON HOVER*/
+}
 .middle {
   position: absolute;
-  background-color: #1787E6;
+  background-color: #DEC19B;
   width: 25%;
   left: 20%;
   top: 10%;
   z-index: 100;
+  border: solid 5px #000000;
+  transition: border-width .5s linear;
 }
 
-.middle:hover{
-    border: 
-}
+  .middle:hover {
+    border-width: 10px;
+    /* ANIMATED ON HOVER*/
+  }
 
 .right {
   position: absolute;
@@ -37,9 +46,12 @@ html {
   top: 10%;
   z-index: 100;
 }
+/*#9465DE, #7614EC,
 
+    background-image: linear-gradient(to top, #F0498E, #EE3F5E, #EE6D3F, #E49124, #ECCB14,
+*/
 body {
-  background-image: linear-gradient(to top, #9465DE, #7614EC, #F0498E, #EE3F5E, #EE6D3F, #E49124, #ECCB14);
+  background-color: #f1f2f2;
   background-repeat: no-repeat;
   height: 100%;
 }
@@ -74,49 +86,49 @@ section {
 
 #leaf4 {
   opacity: 0;
-  left: 0%;
+  left: 80%;
   animation: animate 30s linear infinite;
   animation-delay: 5s;
 }
 
 #leaf5 {
   opacity: 0;
-  left: 80%;
+  left: 75%;
   animation: animate 30s linear infinite;
   animation-delay: 1s;
 }
 
 #leaf6 {
   opacity: 0;
-  left: 15%;
+  left: 25%;
   animation: animate 30s linear infinite;
   animation-delay: 10s;
 }
 
 #leaf7 {
   opacity: 0;
-  left: 55%;
+  left: 20%;
   animation: animate 30s linear infinite;
   animation-delay: 8s;
 }
 
 #leaf8 {
   opacity: 0;
-  left: 90%;
+  left: 80%;
   animation: animate 25s linear infinite;
   animation-delay: 4s;
 }
 
 #leaf9 {
   opacity: 0;
-  left: 25%;
+  left: 30%;
   animation: animate2 30s linear infinite;
   animation-delay: 8s;
 }
 
 #leaf10 {
   opacity: 0;
-  left: 0%;
+  left: 40%;
   animation: animate2 30s linear infinite;
   animation-delay: 0s;
 }
@@ -130,7 +142,7 @@ section {
 
 #leaf12 {
   opacity: 0;
-  left: 75%;
+  left: 65%;
   animation: animate2 30s linear infinite;
   animation-delay: 5s;
 }
