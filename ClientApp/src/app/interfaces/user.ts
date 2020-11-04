@@ -23,3 +23,15 @@ export interface CreatedUser {
   city: string;
   state: string;
 }
+
+export interface SavedLikeInfo {
+  id: number;
+  UserID?: number;
+  RIDBActivity: number;
+  facilityID: number;
+  facilityName: string;
+  facilityLatitude: string;
+  facilityLongitude: string;
+  facilityDescriptions: string
+
+}

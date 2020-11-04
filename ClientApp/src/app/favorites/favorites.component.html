@@ -3,12 +3,25 @@
   <button (click)="callLogout()" style="float: right">Logout</button>
 
   <div class="column" style="background-color:#bbb;">
-    <app-mapdisplay></app-mapdisplay>
+    <agm-map [latitude]="44.5" [longitude]="-85" [zoom]="6.2">
+      <agm-marker *ngFor="let activity of favorites"
+                  [latitude]="activity.facilityLatitude"
+                  [longitude]="activity.facilityLongitude">
+
+      </agm-marker>
+    </agm-map>
   </div>
+
+
+
+
+  //TestCode
   {{user}}
   Test
-  <div *ngFor="let favorite of favorites ">
-    {{favorite.ridbActivity}}
-  </div>
+<div *ngFor="let favorite of favorites ">
+  {{favorite.ridbActivity}}
+  {{favorite.facilityLatitude}}
+  {{favorite.facilityLongitude}}
+</div>
 
 </div>

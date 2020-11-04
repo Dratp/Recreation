@@ -45,7 +45,7 @@ namespace Recreation.Controllers
 
         [HttpGet]
         [Route("like/{userID}")]
-        public List<Likes> GetUserLikes(long userID)
+        public List<SavedLikeInfo> GetUserLikes(long userID)
         {
 
             return db.GetLikes(userID);
