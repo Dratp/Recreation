@@ -18,31 +18,38 @@
   <br />
   <form class="pageLayout">
     <ng-container *ngIf="!user.username">
-      <input #firstNameBox type="text" placeholder="First Name" required />
+      <input #firstName type="text" placeholder="First Name" required />
       <br />
       <br />
-      <input #lastNameBox type="text" placeholder="Last Name" required />
+      <input #lastName type="text" placeholder="Last Name" required />
       <br />
       <br />
-      <input #cityBox type="text" placeholder="City" required />
+      <!--
+  <input #city type="text" placeholder="City" required />
+  <br />
+  <br />
+  <input #state type="text" placeholder="State" required />
+  <br />
+  <br />-->
+      <input #zip type="number" placeholder="Zip Code" required />
       <br />
       <br />
-      <input #stateBox type="text" placeholder="State" required />
+      <input #newUserName type="text" placeholder="User Name" required />
       <br />
       <br />
-      <input #zipBox type="number" placeholder="Zip Code" required />
-      <br />
-      <br />
-      <input #newUserNameBox type="text" placeholder="User Name" required />
-      <br />
-      <br />
-      <input #passBox type="password" placeholder="Password" required />
+      <input #pass type="password" placeholder="Password" required />
       <br />
       <br />
       <input type="password" placeholder="Verify Password" required />
       <br />
       <br />
-      <button (click)="CreateUser(firstNameBox.value, lastNameBox.value, cityBox.value, stateBox.value, zipBox.value, newUserNameBox.value, passBox.value)">Create Profile</button>
+
+      <button (click)="createProfile(firstName.value, lastName.value, zip.value, newUserName.value, pass.value)">Create Profile</button>
+      <!--
+  <button (click)="createUser(firstName.value, lastName.value, city.value, state.value, zip.value, newUserName.value, pass.value)">Create Profile</button>
+    -->
     </ng-container>
   </form>
+  <br />
+  <br />
 </div>

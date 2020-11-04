@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { UserInfo, CreatedUser } from '../interfaces/user';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
-import { state } from '@angular/animations';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +18,7 @@ export class SignedInUserService {
   userResponse: boolean;
   userReason: string;
   apiUrl = '/api/User/Login';
+  newUserApiUrl = '/api/User/new';
 
   newUser: CreatedUser;
 
@@ -30,13 +30,23 @@ export class SignedInUserService {
     this.newUser = { firstName: "", lastName: "", city: "", state: "", zip: "", userName: "", password: ""};
   }
 
-  CreateUser(firstNameBox: string, lastNameBox: string, cityBox: string, stateBox: string, zipBox: string, newUserNameBox: string, passBox: string) {
-    this.newUser = { firstName: firstNameBox, lastName: lastNameBox, city: cityBox, state: stateBox, zip: zipBox, userName: newUserNameBox, password: passBox };
+  CreateUser(firstName:string, lastName:string, zip:string, newUserName:string, pass:string) {
+    this.newUser = { firstName:firstName, lastName:lastName, zip:zip, userName:newUserName, password:pass };
 
     //Not posting! :(
-    this.http.post<CreatedUser>(`/api/User/new`, this.newUser);
+    this.http.post(`${this.newUserApiUrl}`, this.newUser);
     console.log(this.newUser);
   }
+
+  /*
+  CreateUser(firstName: string, lastName: string, city: string, state: string, zip: string, newUserName: string, pass: string) {
+    this.newUser = { firstName: firstName, lastName: lastName, city: city, state: state, zip: zip, userName: newUserName, password: pass };
+
+    //Not posting! :(
+    this.http.post<CreatedUser>(`/api/User/new`,this.newUser);
+    console.log(this.newUser);
+  }
+  */
 
   // This is the function that actually does something in this case sets the username and user ID
   SetUser(user: UserInfo) {
@@ -65,7 +75,7 @@ export class SignedInUserService {
   }
 
   logout() {
-    console.log("user service logout called");
+    //console.log("user service logout called");
     this.username = "";
     this.userId = 0;
     this.route.navigate([""]);
