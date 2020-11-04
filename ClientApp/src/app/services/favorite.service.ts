@@ -20,8 +20,6 @@ export class FavoriteService {
 
     apiUrl = '/api/user/like';
 
-
-
   // This is the API call
   FavoriteAPICall(favorite): Observable<UserFavorite[]> {
     return this.http.get<UserFavorite[]>(this.apiUrl + `/${favorite.UserID}/${favorite.RIDBActivity}`)
@@ -40,9 +38,7 @@ export class FavoriteService {
   }
 
   ClearFavs() {
-    for (let i = 0; i < this.favorites.length; i++) {
-      this.favorites.pop;
-    }
+    this.favorites = [];
   }
 
   PopulateFavs(favs: UserFavorite[]) {
@@ -50,6 +46,5 @@ export class FavoriteService {
       this.favorites.push(favs[i]);
     }
   }
-
 
 }

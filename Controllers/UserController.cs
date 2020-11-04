@@ -20,13 +20,13 @@ namespace Recreation.Controllers
         }
 
         [HttpPost]
-        [Route("{userName}/{password}/{firstName}/{lastName}/{zip}/{city}/{state}")]
-        public User CreateUser(string userName, string password, string firstName, string lastName, string zip, string city, string state)
+        [Route("new")]
+        public User CreateUser(User newUser)
         {
-            User user = db.CreateUser(userName, password, firstName, lastName, zip, city, state);
+            //HTTPPost does not reach this point!
+            User user = CreateUser(newUser);
             user.Password = "";
             return user;
-
         }
 
         [HttpGet]
@@ -43,6 +43,11 @@ namespace Recreation.Controllers
             return db.GetLikes(userID, RIDBActivity);
         }
 
-
+        [HttpGet]
+        [Route("like/{userID}")]
+        public List<Likes> GetUserLikes(long userID)
+        {
+            return db.GetLikes(userID);
+        }
     }
 }

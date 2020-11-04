@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { SignedInUserService } from '../services/signed-in-user.service';
-import { UserInfo } from '../interfaces/user';
+import { UserInfo, UserFavorite } from '../interfaces/user';
 import { Router } from '@angular/router';
+import { FavoriteService } from '../services/favorite.service';
 
 @Component({
   selector: 'app-favorites',
@@ -10,8 +11,9 @@ import { Router } from '@angular/router';
 })
 export class FavoritesComponent implements OnInit {
   user: UserInfo;
+  favorite: UserFavorite[];
 
-  constructor(private UserService: SignedInUserService, private route: Router) { }
+  constructor(private UserService: SignedInUserService, private route: Router, private favorites: FavoriteService) { }
 
   ngOnInit() {
   }
@@ -19,6 +21,9 @@ export class FavoritesComponent implements OnInit {
   callLogout() {
     console.log("button pressed!");
     this.UserService.logout();
-    }
+  }
+
+
+
   }
 

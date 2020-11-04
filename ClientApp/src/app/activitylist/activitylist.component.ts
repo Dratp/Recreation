@@ -12,7 +12,6 @@ export class ActivitylistComponent implements OnInit {
   activities: ActivityData[];
   uniqueActs: string[];
   
-  
   constructor(private activitydataservice: ActivityDataService) {
     this.uniqueActs = [];
     //this.activities = activitydataservice.getActivityDataList();
@@ -28,9 +27,11 @@ export class ActivitylistComponent implements OnInit {
       results => (this.uniqueActs = results));
   }
 
-  chooseActivity(activity: string): void {
-    this.activitydataservice.ChosenActivity = activity;
+  chooseActivity(activityName: string): void {
+    this.activitydataservice.ChosenActivity = activityName;
+    this.activitydataservice.populateList(activityName);
   }
+
 
   addPinToMap() {
 
