@@ -31,11 +31,15 @@ export class SignedInUserService {
   }
 
   CreateUser(firstName:string, lastName:string, zip:string, newUserName:string, pass:string) {
-    this.newUser = { firstName:firstName, lastName:lastName, zip:zip, userName:newUserName, password:pass };
+    this.newUser = { firstName: firstName, lastName: lastName, zip: zip, userName: newUserName, password: pass };
+    this.newUser.userID = -1;
+    //console.log(this.newUser);
+    this.SendUserInfo(this.newUser);
+  }
 
-    //Not posting! :(
-    this.http.post(`${this.newUserApiUrl}`, this.newUser);
-    console.log(this.newUser);
+  SendUserInfo(user: CreatedUser) {
+    //console.log(this.newUser);
+    return this.http.post<CreatedUser>(this.newUserApiUrl, this.newUser).subscribe();
   }
 
   /*
