@@ -34,7 +34,10 @@
           <h2>{{activity.facilityName}}</h2>
           <a class="close" href="#">&times;</a>
           <div class="content">
-            <p><app-facilitydescription></app-facilitydescription></p>
+            <app-facilitydescription></app-facilitydescription>
+            <!--Note: To display as HTML:
+            <div innerHTML="{{activity.facilityDescription}}"></div>
+              -->
           </div>
         </div>
 
