@@ -7,6 +7,9 @@
     <agm-marker *ngFor="let activity of places"
                 [latitude]="activity.facilityLatitude"
                 [longitude]="activity.facilityLongitude">
+      <agm-info-window
+                       [latitude] =" activity.facilityLatitude"
+                       [longitude] ="activity.facilityLongitude">{{activity.facilityName}}</agm-info-window>
 
     </agm-marker>
   </agm-map>
