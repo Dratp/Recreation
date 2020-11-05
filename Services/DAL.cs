@@ -18,7 +18,9 @@ namespace Recreation.Services
 
         public DAL(IConfiguration config)
         {
-            db = new SqlConnection(config.GetConnectionString("Heizer"));
+
+            db = new SqlConnection(config.GetConnectionString("Tyler"));
+
         }
 
 

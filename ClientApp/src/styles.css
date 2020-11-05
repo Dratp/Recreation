@@ -16,6 +16,8 @@ html {
   top: 10%;
   z-index: 100;
   border: solid 5px #000000;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
   transition: border-width .5s linear;
 }
 
@@ -31,6 +33,8 @@ html {
   top: 10%;
   z-index: 100;
   border: solid 5px #000000;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
   transition: border-width .5s linear;
 }
 
@@ -41,11 +45,21 @@ html {
 
 .right {
   position: absolute;
-  width: 50%;
   left: 50%;
   top: 10%;
-  z-index: 100;
+  z-index: 10;
+  border: solid 5px black;
+  border-radius: 5px;
+  transition: border-width .5s linear;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 }
+
+.right:hover {
+  border-width: 10px;
+  /* ANIMATED ON HOVER*/
+}
+
+
 /*#9465DE, #7614EC,
 
     background-image: linear-gradient(to top, #F0498E, #EE3F5E, #EE6D3F, #E49124, #ECCB14,
@@ -69,8 +83,9 @@ section {
 #leaf1 {
   opacity: 0;
   left: 60%;
-  animation: animate 30s linear infinite;
+  animation: animate 40s linear infinite;
   animation-delay: 1s;
+  z-index: -10;
 }
 
 #leaf2 {
@@ -78,13 +93,15 @@ section {
   left: 30%;
   animation: animate 30s linear infinite;
   animation-delay: 2s;
+  z-index: -10;
 }
 
 #leaf3 {
   opacity: 0;
   left: 40%;
-  animation: animate 30s linear infinite;
+  animation: animate 40s linear infinite;
   animation-delay: 3s;
+  z-index: 0;
 }
 
 #leaf4 {
@@ -92,14 +109,16 @@ section {
   left: 70%;
   animation: animate 30s linear infinite;
   animation-delay: 4s;
+  z-index: 0;
 }
-    
+
 
 #leaf5 {
   opacity: 0;
   left: 50%;
-  animation: animate 30s linear infinite;
+  animation: animate 40s linear infinite;
   animation-delay: 5s;
+  z-index: 0;
 }
 
 #leaf6 {
@@ -107,15 +126,17 @@ section {
   left: 55%;
   animation: animate 30s linear infinite;
   animation-delay: 6s;
+  z-index: 0;
 }
-    
+
 
 
 #leaf7 {
   opacity: 0;
   left: 40%;
-  animation: animate2 30s linear infinite;
+  animation: animate2 40s linear infinite;
   animation-delay: 7s;
+  z-index: 0;
 }
 
 #leaf8 {
@@ -123,13 +144,15 @@ section {
   left: 50%;
   animation: animate 25s linear infinite;
   animation-delay: 8s;
+  z-index: 0;
 }
 
 #leaf9 {
   opacity: 0;
   left: 35%;
-  animation: animate2 30s linear infinite;
+  animation: animate2 40s linear infinite;
   animation-delay: 9s;
+  z-index: 0;
 }
 
 #leaf10 {
@@ -137,13 +160,15 @@ section {
   left: 45%;
   animation: animate2 30s linear infinite;
   animation-delay: 10s;
+  z-index: 0;
 }
 
 #leaf11 {
   opacity: 0;
   left: 55%;
-  animation: animate2 30s linear infinite;
+  animation: animate2 40s linear infinite;
   animation-delay: 11s;
+  z-index: -100;
 }
 
 #leaf12 {
@@ -151,6 +176,7 @@ section {
   left: 65%;
   animation: animate2 30s linear infinite;
   animation-delay: 12s;
+  z-index: 0;
 }
 
 
