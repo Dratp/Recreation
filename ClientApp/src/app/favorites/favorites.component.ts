@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SignedInUserService } from '../services/signed-in-user.service';
-import { UserInfo, UserFavorite } from '../interfaces/user';
+import { UserInfo, UserFavorite, SavedLikeInfo } from '../interfaces/user';
 import { Router } from '@angular/router';
 import { FavoriteService } from '../services/favorite.service';
 
@@ -11,8 +11,12 @@ import { FavoriteService } from '../services/favorite.service';
 })
 export class FavoritesComponent implements OnInit {
   user: UserInfo;
-  favorites : UserFavorite[]
-  
+
+  //favorites : SavedLikeInfo[]  nothing should call favorites
+  likedFavorites: SavedLikeInfo[];
+ 
+
+
   constructor(private UserService: SignedInUserService, private route: Router, private favoritesService: FavoriteService) { }
 
   ngOnInit() {
@@ -20,7 +24,7 @@ export class FavoritesComponent implements OnInit {
 
     console.log(this.UserService.userId)
     console.log(this.favoritesService.favorites)
-    this.favorites = this.favoritesService.favorites
+    this.likedFavorites = this.favoritesService.likedFavorites
   }
 
 

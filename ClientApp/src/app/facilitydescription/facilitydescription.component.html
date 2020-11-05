@@ -1,5 +1,4 @@
-<div style="border: 1px solid red">Facility Description</div>
-
-<div *ngFor="let description of facilityDescriptions">
-  {{description.facilityDescription}}
+<div *ngIf="facility">
+  <h1>{{facility.facilityName}}</h1>
+  {{facility.facilityDescription}}
 </div>

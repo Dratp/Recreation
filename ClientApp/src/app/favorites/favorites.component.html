@@ -20,6 +20,7 @@
               <div innerHTML="{{favorites.facilityDescription}}"></div>
 
 
+
             </div>
           </div>
 
@@ -29,24 +30,23 @@
 
     </div>
 
+
+  <div class="column" style="background-color:#bbb;">
+    <agm-map [latitude]="44.5" [longitude]="-85" [zoom]="6.2">
+      <agm-marker *ngFor="let activity of favoritesService.likedFavorites"
+                  [latitude]="activity.facilityLatitude"
+                  [longitude]="activity.facilityLongitude">
+        <agm-info-window [latitude]=" activity.facilityLatitude"
+                         [longitude]="activity.facilityLongitude">{{activity.facilityName}}</agm-info-window>
+      </agm-marker>
+    </agm-map>
+
   </div>
 
 
 
 
-  <div class="right">
-    <div class="column">
-      <agm-map [latitude]="44.5" [longitude]="-85" [zoom]="6.2">
-        <agm-marker *ngFor="let activity of favorites"
-                    [latitude]="activity.facilityLatitude"
-                    [longitude]="activity.facilityLongitude">
-                    
-        </agm-marker>
-      </agm-map>
-    </div>
-  </div>
-  
-  
+
 
 
 </div>

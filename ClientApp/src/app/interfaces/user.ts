@@ -33,5 +33,6 @@ export interface SavedLikeInfo {
   facilityLatitude: string;
   facilityLongitude: string;
   facilityDescriptions: string
+  activity: string //activity name
 
 }
