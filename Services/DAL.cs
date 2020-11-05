@@ -46,7 +46,7 @@ namespace Recreation.Services
 
         public List<SavedLikeInfo> GetLikes(long userID)
         {
-            List<SavedLikeInfo> data = db.Query<SavedLikeInfo>($"SELECT Likes.Likeid, Likes.UserID, Likes.RIDBActivity, RIDBAct.FacilityID, RIDB.FacilityName, RIDB.FacilityLatitude, RIDB.FacilityLongitude, RIDB.FacilityTypeDescription From RIDB Join RIDBAct On RIDB.FacilityID = RIDBAct.FacilityID Join Likes On Likes.RIDBActivity = RIDBAct.id Where UserID = { userID}").AsList<SavedLikeInfo>();
+            List<SavedLikeInfo> data = db.Query<SavedLikeInfo>($"SELECT Likes.Likeid, Likes.UserID, Likes.RIDBActivity, RIDBAct.FacilityID, RIDB.FacilityName, RIDB.FacilityLatitude, RIDB.FacilityLongitude, RIDB.FacilityTypeDescription, RIDBAct.Activity From RIDB Join RIDBAct On RIDB.FacilityID = RIDBAct.FacilityID Join Likes On Likes.RIDBActivity = RIDBAct.id Where UserID = { userID}").AsList<SavedLikeInfo>();
 
             //This pulls data 
             return data;

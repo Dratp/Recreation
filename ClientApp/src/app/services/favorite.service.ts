@@ -14,6 +14,7 @@ export class FavoriteService {
   favorite: UserFavorite;
   favorites: UserFavorite[];
   userInfo: UserInfo;
+  likedFavorites: SavedLikeInfo[] = [];
   
 
 
@@ -49,6 +50,8 @@ export class FavoriteService {
       this.favorites.push(favs[i]);
     }
   }
+
+
   //api call
   GetFavoriteList(userID: number): Observable<SavedLikeInfo []>{
 
@@ -64,7 +67,7 @@ export class FavoriteService {
 
   makeFavoriteList(favsinfo: SavedLikeInfo[]) {
     for (let i = 0; i < favsinfo.length; i++) {
-      this.favorites.push(favsinfo[i]);
+      this.likedFavorites.push(favsinfo[i]);
     }
   }
 

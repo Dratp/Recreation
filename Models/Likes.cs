@@ -26,5 +26,6 @@ namespace Recreation.Models
         public string FacilityLatitude { get; set; }
         public string FacilityLongitude { get; set; }
         public string FacilityDescription { get; set; }
+        public string Activity { get; set; } //activity name 
     }
 }
