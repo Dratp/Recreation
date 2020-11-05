@@ -11,15 +11,16 @@ import { FavoriteService } from '../services/favorite.service';
 })
 export class FavoritesComponent implements OnInit {
   user: UserInfo;
-  favorites : SavedLikeInfo[]
+
+  //favorites : SavedLikeInfo[]  nothing should call favorites
   likedFavorites: SavedLikeInfo[];
  
+
 
   constructor(private UserService: SignedInUserService, private route: Router, private favoritesService: FavoriteService) { }
 
   ngOnInit() {
     this.favoritesService.GetUserFavorites(this.UserService.userId);
-
 
     console.log(this.UserService.userId)
     console.log(this.favoritesService.favorites)

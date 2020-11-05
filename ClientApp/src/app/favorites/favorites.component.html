@@ -1,6 +1,35 @@
 <div>
 
-  
+  <div class="left">
+    <h1>Favorite Locations</h1>
+
+    <div class="scrollbox">
+
+      <div *ngFor="let favorite of favorites">
+        <a class="button" href="#popup">{{favorite.facilityName}} ({{favorite.RIDBActivity}})</a>
+
+        <div id="popup" class="overlay">
+
+          <div class="popup">
+            <h2>{{favorites.facilityName}}</h2>
+
+            <div class="content">
+
+              <!--<app-facilitydescription></app-facilitydescription>-->
+
+              <div innerHTML="{{favorites.facilityDescription}}"></div>
+
+
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
 
   <div class="column" style="background-color:#bbb;">
     <agm-map [latitude]="44.5" [longitude]="-85" [zoom]="6.2">
@@ -11,19 +40,13 @@
                          [longitude]="activity.facilityLongitude">{{activity.facilityName}}</agm-info-window>
       </agm-marker>
     </agm-map>
+
   </div>
 
 
 
 
-  //TestCode
-  {{user}}
-  Test
-<div *ngFor="let favorite of favoritesService.likedFavorites">
-  {{favorite.ridbActivity}}
-  {{favorite.activity}}
-  {{favorite.facilityLatitude}}
-  {{favorite.facilityLongitude}}
-</div>
+
+
 
 </div>

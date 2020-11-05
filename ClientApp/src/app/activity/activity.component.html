@@ -1,9 +1,8 @@
 <h1>Activities</h1>
-<div>
+<div class="search">
 
   <input [(ngModel)]="searchField" placeholder="Search Places" (input)="Search()" /> {{searchField}} 
 
-  <!--<button (click)="activitydataservice.populateList(activityname)">Enter</button> -->
 
 
 <div class="scrollbox">
@@ -11,6 +10,7 @@
   <div *ngIf="!searchField">
      <div *ngFor="let activity of activitydataservice.activities" (click)="onSelect(activity)">
       <div id="content-wrapper">
+
 
 
         <div *ngIf="userdataservice.username" class="button">
@@ -38,10 +38,10 @@
 
           <div class="content">
 
-            <app-facilitydescription></app-facilitydescription>
-            <!--Note: To display as HTML:
+            <!--<app-facilitydescription></app-facilitydescription>-->
+            
             <div innerHTML="{{activity.facilityDescription}}"></div>
-              -->
+              
 
           </div>
         </div>

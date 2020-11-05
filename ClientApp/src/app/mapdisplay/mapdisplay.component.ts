@@ -13,8 +13,10 @@ export class MapdisplayComponent {
   @Input() places: ActivityData;
   activities: ActivityData[];
   activity: ActivityData;
-  title = 'My first AGM project';
-  lat : number;
+
+  title = 'Location Map';
+  lat :number;
+
   lng : number;
 
   constructor(private activitydataservice: ActivityDataService) {}

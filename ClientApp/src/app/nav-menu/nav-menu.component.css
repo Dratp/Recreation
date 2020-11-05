@@ -1,25 +1,20 @@
 a.navbar-brand {
-  text-align: center;
+  text-align: left;
   word-break: break-all;
   z-index: 1000;
   font-family: "Trebuchet MS", Tahoma, Arial, sans-serif;
   
 }
 
+
 a.nav-link {
   font-family: "Trebuchet MS", Tahoma, Arial, sans-serif;
   font: bold "Tebuchet MS";
 }
 
-
-html {
-  font-size: 14px;
-  
-}
 @media (min-width: 768px) {
   html {
     font-size: 16px;
-    
   }
 }
 
@@ -27,6 +22,9 @@ html {
   box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
 
-nav {
+.navbar {
+  color: #FFFFFF;
+  background-color: #D08E28;
   z-index: 1000;
 }
+
