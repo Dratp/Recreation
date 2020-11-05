@@ -11,15 +11,15 @@ h1 {
   margin: 50px 0;
 }
 
-#wrapper {
-  width: 100px;
+#content-wrapper {
+
   margin: 0 auto;
   background: #fff;
-  padding: 20px;
-  border: 10px solid #aaa;
-  border-radius: 15px;
+  padding: 2px;
+  border: 3px solid #aaa;
+  border-radius: 5px;
   background-clip: padding-box;
-  text-align: center;
+  text-align: left;
 }
 
 .overlay {
@@ -59,6 +59,7 @@ h1 {
   width: 700px;
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
   position: relative;
+  z-index: 1000;
 }
 
 .light .popup {

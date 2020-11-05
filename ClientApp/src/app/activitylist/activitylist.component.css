@@ -2,15 +2,15 @@
   margin: 0 0 2em 0;
   list-style-type: none;
   padding: 0;
-  width: 9em;
+  width: 12em;
 }
 
   .activitylist li {
     cursor: pointer;
     position: relative;
-    left: 20px;
+    left: 5px;
     background-color: #D08E28;
-    margin: .5em;
+    margin: .3em;
     padding: .3em 0;
     height: 1.5em;
     border-radius: 4px;
