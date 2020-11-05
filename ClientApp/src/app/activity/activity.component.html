@@ -1,9 +1,9 @@
 <h1>Activities</h1>
-<div>
+<div class="search">
 
   <input [(ngModel)]="activityname" placeholder="Enter Activity">
 
-  <button (click)="activitydataservice.populateList(activityname)">Enter</button>
+  <button class="searchbutton" (click)="activitydataservice.populateList(activityname)">Enter</button>
 
   <div class="scrollbox">
     <div *ngFor="let activity of activitydataservice.activities">
@@ -17,8 +17,7 @@
 
             <span *ngIf="FavoriteCheck(activity.id)"><button (click)="addLikedActivity(activity)" class="megusta">♥</button></span>
 
-            <span *ngIf="!FavoriteCheck(activity.id)"><button (click)="addLikedActivity(activity)" class="nomegusta">♥</button>
-            </span>
+            <span *ngIf="!FavoriteCheck(activity.id)"><button (click)="addLikedActivity(activity)" class="nomegusta">♥</button></span>
 
           </div>
 
@@ -37,10 +36,10 @@
           
           <div class="content">
 
-            <app-facilitydescription></app-facilitydescription>
-            <!--Note: To display as HTML:
+            <!--<app-facilitydescription></app-facilitydescription>-->
+            
             <div innerHTML="{{activity.facilityDescription}}"></div>
-              -->
+              
 
           </div>
         </div>

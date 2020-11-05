@@ -3,6 +3,31 @@ body {
   background: #ddd;
 }
 
+.btn-primary {
+  padding: 3px 15px;
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #666;
+  font-weight: bold;
+  background-color: white;
+  border: solid 2px;
+}
+
+  .btn-primary:hover {
+    background-color: #d97731;
+    color: white;
+  }
+
+  .btn-primary:active {
+    background-color: #4f95da;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+    color: white;
+  }
+
+
 h1 {
   text-align: center;
   font-family: "Trebuchet MS", Tahoma, Arial, sans-serif;
@@ -104,7 +129,7 @@ h1 {
   }
 
 .scrollbox {
-  height: 567px;
+  height: 500px;
   width: 100%;
   overflow-y: scroll;
   background-color: #DEC19B;

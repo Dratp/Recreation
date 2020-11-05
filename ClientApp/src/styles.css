@@ -2,12 +2,6 @@ html {
   height: 100%;
 }
 
-.btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
-}
-
 .left {
   position: absolute;
   background-color: #DEC19B;

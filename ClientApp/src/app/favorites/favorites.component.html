@@ -3,10 +3,14 @@
   <div class="left">
     <h1>Favorite Locations</h1>
 
+    <div class="scrollbox">
 
-    <div *ngFor="let favorite of favorites ">
-      {{favorite.facilityName}}
+      <div *ngFor="let favorite of favorites ">
+        {{favorite.facilityName}} ({{favorite.RIDBActivity}})
+      </div>
+
     </div>
+
   </div>
 
 
