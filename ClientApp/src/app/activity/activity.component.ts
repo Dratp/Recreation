@@ -14,7 +14,7 @@ import { FavoriteService } from '../services/favorite.service';
 export class ActivityComponent {
   activity: ActivityData;
   userFavorite: UserFavorite;
-  activityname: string;
+  searchField: string;
   favorites: UserFavorite[]
 
 
@@ -25,6 +25,7 @@ export class ActivityComponent {
   ) { }
 
   ngOnInit(): void {
+    console.log("Activity component ngOnInt");
     this.favoriteservice.GetUserFavorites(this.userdataservice.userId);
     this.favorites = this.favoriteservice.favorites
 
@@ -54,11 +55,17 @@ export class ActivityComponent {
   }
 
   FavoriteCheck(act: ActivityData) {
-    
     if (act.favorite) {
       return true;
     }
     return false;
   }
+
+  Search() {
+    this.activitydataservice.activities = this.activitydataservice.activities.filter(res => {
+      return res.facilityName.toLocaleLowerCase().match(this.searchField.toLocaleLowerCase());
+    });
+  }
+
 
 }
