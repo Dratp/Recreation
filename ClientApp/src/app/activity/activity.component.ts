@@ -28,7 +28,8 @@ export class ActivityComponent {
     console.log("Activity component ngOnInt");
     this.favoriteservice.GetUserFavorites(this.userdataservice.userId);
     this.favorites = this.favoriteservice.favorites;
-    this.filteredList = [];
+    this.filteredList = this.activitydataservice.activities;
+
   }
 
   //getActivityList() {
