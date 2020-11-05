@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ActivityData } from '../interfaces/activity';
+import { SignedInUserService } from './signed-in-user.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class ActivityDataService {
   activities: ActivityData[];
 
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private user: SignedInUserService) {
     this.ChosenActivity = "";
     this.activities = [];
   }
@@ -27,6 +28,11 @@ export class ActivityDataService {
   }
 
   getActivityByName(activityname): Observable<ActivityData[]> {
+    if (this.user.userId > 0) {
+      return (this.http.get<ActivityData[]>(`${this.apiUrl}/${activityname}/${this.user.userId}`));
+    }
+
+    console.log("Getting activites");
     return (this.http.get<ActivityData[]>(`${this.apiUrl}/${activityname}`));
   }
 

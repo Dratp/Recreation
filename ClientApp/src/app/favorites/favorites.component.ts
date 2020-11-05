@@ -26,10 +26,7 @@ export class FavoritesComponent implements OnInit {
     this.favorites = this.favoritesService.favorites
   }
 
-  callLogout() {
-    console.log("button pressed!");
-    this.UserService.logout();
-  }
+
 
 
   //getFavoriteList(userId: number) {

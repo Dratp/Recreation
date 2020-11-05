@@ -25,6 +25,7 @@ namespace Recreation.Services
         public void DeleteLike(Likes like);
 
         public List<string> GetUniqueActivityList();
+        public List<ActivityData> GetActivityDataList(long userID);
 
 
     }

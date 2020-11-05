@@ -17,4 +17,9 @@ export class NavMenuComponent {
   toggle() {
     this.isExpanded = !this.isExpanded;
   }
+
+  callLogout() {
+    //console.log("button pressed!");
+    this.user.logout();
+  }
 }

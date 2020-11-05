@@ -23,7 +23,11 @@
           
           <!--User Login in display if User is signed in or not-->
           <li *ngIf="user.username" class="nav-item" [routerLinkActive]="['link-active']">
+
             <a class="nav-link " [routerLink]="['/favorites']">{{user.username}}'s Page</a>
+
+            <button (click)="callLogout()" style="float: right">Logout</button>
+
           </li>
 
           <li *ngIf="!user.username" class="nav-item"
