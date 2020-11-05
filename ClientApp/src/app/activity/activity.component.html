@@ -1,54 +1,95 @@
 <h1>Activities</h1>
 <div>
 
-  <input [(ngModel)]="searchField" placeholder="Search Places" (input)="Search()" /> {{searchField}}
+  <input [(ngModel)]="searchField" placeholder="Search Places" (input)="Search()" /> {{searchField}} 
 
   <!--<button (click)="activitydataservice.populateList(activityname)">Enter</button> -->
 
-<div class="scrollbox">
+  <div class="scrollbox">
 
-  <!--<div *ngFor="let activity of activitydataservice.activities"> -->
-  <div *ngFor="let activity of filteredList">
+    <div *ngIf="!searchField">
+      <div *ngFor="let activity of activitydataservice.activities">
+        <div id="content-wrapper">
 
-    <div id="content-wrapper">
+          <div *ngIf="userdataservice.username" class="button">
 
-      <div *ngIf="userdataservice.username" class="button">
+            <a class="button" href="#popup">{{activity.facilityName}} ({{activity.activity}})</a>
 
-        <a class="button" href="#popup">{{activity.facilityName}} ({{activity.activity}})</a>
+            <span *ngIf="activity.favorite"><button (click)="addLikedActivity(activity)" class="megusta">♥</button></span>
 
-        <span *ngIf="activity.favorite"><button (click)="addLikedActivity(activity)" class="megusta">♥</button></span>
+            <span *ngIf="!activity.favorite">
+              <button (click)="addLikedActivity(activity)" class="nomegusta">♥</button>
+            </span>
 
-        <span *ngIf="!activity.favorite">
-          <button (click)="addLikedActivity(activity)" class="nomegusta">♥</button>
-        </span>
+          </div>
 
-      </div>
-
-      <div *ngIf="!userdataservice.username" class="button">
-        <a class="button" href="#popup">{{activity.facilityName}} ({{activity.activity}})</a>
-
-      </div>
-
-    </div>
+          <div *ngIf="!userdataservice.username" class="button">
+            <a class="button" href="#popup">{{activity.facilityName}} ({{activity.activity}})</a>
+          </div>
+        </div>
 
 
-    <div id="popup" class="overlay">
+        <div id="popup" class="overlay">
+          <div class="popup">
+            <h2>{{activity.facilityName}}</h2>
 
-      <div class="popup">
-        <h2>{{activity.facilityName}}</h2>
+            <div class="content">
 
-        <div class="content">
-
-          <app-facilitydescription></app-facilitydescription>
-          <!--Note: To display as HTML:
+              <app-facilitydescription></app-facilitydescription>
+              <!--Note: To display as HTML:
           <div innerHTML="{{activity.facilityDescription}}"></div>
             -->
 
+            </div>
+          </div>
+
         </div>
       </div>
-
     </div>
+      <div *ngIf="searchField">
+        <div *ngFor="let activity of filteredList">
 
+          <div id="content-wrapper">
+
+            <div *ngIf="userdataservice.username" class="button">
+
+              <a class="button" href="#popup">{{activity.facilityName}} ({{activity.activity}})</a>
+
+              <span *ngIf="activity.favorite"><button (click)="addLikedActivity(activity)" class="megusta">♥</button></span>
+
+              <span *ngIf="!activity.favorite">
+                <button (click)="addLikedActivity(activity)" class="nomegusta">♥</button>
+              </span>
+
+            </div>
+
+            <div *ngIf="!userdataservice.username" class="button">
+              <a class="button" href="#popup">{{activity.facilityName}} ({{activity.activity}})</a>
+
+            </div>
+
+          </div>
+
+
+          <div id="popup" class="overlay">
+
+            <div class="popup">
+              <h2>{{activity.facilityName}}</h2>
+
+              <div class="content">
+
+                <app-facilitydescription></app-facilitydescription>
+                <!--Note: To display as HTML:
+                <div innerHTML="{{activity.facilityDescription}}"></div>
+                  -->
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    
   </div>
-</div>
 </div>
