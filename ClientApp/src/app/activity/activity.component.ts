@@ -16,7 +16,7 @@ export class ActivityComponent {
   userFavorite: UserFavorite;
   searchField: string;
   favorites: UserFavorite[]
-
+  filteredList: ActivityData[];
 
   constructor(
     private activitydataservice: ActivityDataService,
@@ -27,8 +27,8 @@ export class ActivityComponent {
   ngOnInit(): void {
     console.log("Activity component ngOnInt");
     this.favoriteservice.GetUserFavorites(this.userdataservice.userId);
-    this.favorites = this.favoriteservice.favorites
-
+    this.favorites = this.favoriteservice.favorites;
+    this.filteredList = [];
   }
 
   //getActivityList() {
@@ -62,7 +62,7 @@ export class ActivityComponent {
   }
 
   Search() {
-    this.activitydataservice.activities = this.activitydataservice.activities.filter(res => {
+    this.filteredList = this.activitydataservice.activities.filter(res => {
       return res.facilityName.toLocaleLowerCase().match(this.searchField.toLocaleLowerCase());
     });
   }
