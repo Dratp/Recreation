@@ -1,23 +1,25 @@
 <div>
 
   
+  <div class="right">
+    <div class="column">
+      <agm-map [latitude]="44.5" [longitude]="-85" [zoom]="6.2">
+        <agm-marker *ngFor="let activity of favorites"
+                    [latitude]="activity.facilityLatitude"
+                    [longitude]="activity.facilityLongitude">
 
-  <div class="column" style="background-color:#bbb;">
-    <agm-map [latitude]="44.5" [longitude]="-85" [zoom]="6.2">
-      <agm-marker *ngFor="let activity of favorites"
-                  [latitude]="activity.facilityLatitude"
-                  [longitude]="activity.facilityLongitude">
-
-      </agm-marker>
-    </agm-map>
+        </agm-marker>
+      </agm-map>
+    </div>
   </div>
+  
+  
+  <div>
+    //TestCode
+    {{user}}
+  </div>
+  
 
-
-
-
-  //TestCode
-  {{user}}
-  Test
 <div *ngFor="let favorite of favorites ">
   {{favorite.ridbActivity}}
   {{favorite.facilityLatitude}}

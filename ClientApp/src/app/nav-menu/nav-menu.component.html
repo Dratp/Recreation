@@ -1,8 +1,8 @@
 <header>
-  <nav
-    class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3"
-  >
+  <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+
     <div class="container">
+
       <a class="navbar-brand" [routerLink]="['/']">Recreation</a>
       <button
         class="navbar-toggler"
@@ -11,14 +11,15 @@
         data-target=".navbar-collapse"
         aria-label="Toggle navigation"
         [attr.aria-expanded]="isExpanded"
-        (click)="toggle()"
-      >
+        (click)="toggle()">
+
         <span class="navbar-toggler-icon"></span>
       </button>
+
       <div
         class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse"
-        [ngClass]="{ show: isExpanded }"
-      >
+        [ngClass]="{ show: isExpanded }">
+
         <ul class="navbar-nav flex-grow">
           
           <!--User Login in display if User is signed in or not-->

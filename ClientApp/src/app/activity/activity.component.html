@@ -13,7 +13,7 @@
 
           <div *ngIf="userdataservice.username" class="button">
 
-            <a class="button" href="#popup">{{activity.id}}{{activity.facilityName}} ({{activity.activity}})</a>
+            <a class="button" href="#popup">{{activity.facilityName}} ({{activity.activity}})</a>
 
             <span *ngIf="FavoriteCheck(activity.id)"><button (click)="addLikedActivity(activity)" class="megusta">♥</button></span>
 

@@ -2,5 +2,24 @@ agm-map {
   height: 500px;
   width: 600px;
   padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
   z-index: 1000;
 }
+
+.right {
+  position: absolute;
+  left: 51%;
+  top: 10%;
+  z-index: 10;
+  border: solid 5px black;
+  border-radius: 5px;
+  transition: border-width .5s linear;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+  background-color: #DEC19B;
+}
+
+  .right:hover {
+    border-width: 10px;
+  }
