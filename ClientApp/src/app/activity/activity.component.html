@@ -6,47 +6,49 @@
   <button (click)="activitydataservice.populateList(activityname)">Enter</button>
 
   <div class="scrollbox">
-    <div *ngFor="let activity of activitydataservice.activities">
+    <div *ngFor="let activity of activitydataservice.activities" (click)="onSelect(activity)">
 
 
       <div id="content-wrapper">
 
-          <div *ngIf="userdataservice.username" class="button">
+        <div *ngIf="userdataservice.username" class="button">
 
-            <a class="button" href="#popup">{{activity.id}}{{activity.facilityName}} ({{activity.activity}})</a>
+          <a class="button" href="#popup">{{activity.id}}{{activity.facilityName}} ({{activity.activity}})</a>
 
-            <span *ngIf="FavoriteCheck(activity.id)"><button (click)="addLikedActivity(activity)" class="megusta">♥</button></span>
+          <span *ngIf="FavoriteCheck(activity.id)"><button (click)="addLikedActivity(activity)" class="megusta">♥</button></span>
 
-            <span *ngIf="!FavoriteCheck(activity.id)"><button (click)="addLikedActivity(activity)" class="nomegusta">♥</button>
-            </span>
+          <span *ngIf="!FavoriteCheck(activity.id)">
+            <button (click)="addLikedActivity(activity)" class="nomegusta">♥</button>
+          </span>
 
-          </div>
+        </div>
 
-          <div *ngIf="!userdataservice.username" class="button">
-            <a class="button" href="#popup">{{activity.facilityName}} ({{activity.activity}})</a>
+        <div *ngIf="!userdataservice.username" class="button">
+          <a class="button" href="#popup">{{activity.facilityName}} ({{activity.activity}})</a>
 
-          </div>
-
-      </div>
-
-
-      <div id="popup" class="overlay">
-
-        <div class="popup">
-          <h2>{{activity.facilityName}}</h2>
-          
-          <div class="content">
-
-            <app-facilitydescription></app-facilitydescription>
-            <!--Note: To display as HTML:
-            <div innerHTML="{{activity.facilityDescription}}"></div>
-              -->
-
-          </div>
         </div>
 
       </div>
 
     </div>
+
   </div>
+
 </div>
+<!--
+<div id="popup" class="overlay">
+
+  <div class="popup">
+    <h2>{{activity.facilityName}}</h2>
+
+    <div class="content">
+
+      
+      <!--Note: To display as HTML:
+      <div innerHTML="{{activity.facilityDescription}}"></div>
+        
+    </div>
+  </div>
+
+</div>
+-->

@@ -12,7 +12,7 @@ import { FavoriteService } from '../services/favorite.service';
 })
 
 export class ActivityComponent {
-  activity: ActivityData;
+
   userFavorite: UserFavorite;
   activityname: string;
   favorites: UserFavorite[]
@@ -28,6 +28,10 @@ export class ActivityComponent {
     this.favoriteservice.GetUserFavorites(this.userdataservice.userId);
     this.favorites = this.favoriteservice.favorites
     this.GetFavorites();
+  }
+
+  onSelect(activity: ActivityData): void {
+    this.activitydataservice.selectedActivity = activity;
   }
 
   //getActivityList() {

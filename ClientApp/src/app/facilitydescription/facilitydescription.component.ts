@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,Input } from '@angular/core';
 import { ActivityDataService } from '../services/activity-data.service';
 import { ActivityData } from '../interfaces/activity';
 
@@ -9,6 +9,7 @@ import { ActivityData } from '../interfaces/activity';
 })
 /** facilitydescription component*/
 export class FacilitydescriptionComponent {
+  @Input() facility: ActivityData;
   facilityDescriptions: ActivityData[];
   facilities: string[];
   
@@ -19,7 +20,7 @@ export class FacilitydescriptionComponent {
   
 
   ngOninit(): void{
-    this.getActivityList();
+
   }
 
   getActivityList() {
