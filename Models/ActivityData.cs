@@ -14,5 +14,7 @@ namespace Recreation.Models
         public string FacilityLongitude { get; set; }
         public string FacilityLatitude { get; set; }
         public string FacilityDescription { get; set; }
+        public Boolean favorite { get; set; }
+        public long LikeID { get; set; }
     }
 }

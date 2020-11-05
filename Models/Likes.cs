@@ -10,7 +10,7 @@ namespace Recreation.Models
     public class Likes
     {
         [Key]
-        public long ID { get; set; }
+        public long LikeID { get; set; }
         public long UserID { get; set; }
         public long RIDBActivity { get; set; }
 
@@ -18,7 +18,7 @@ namespace Recreation.Models
     public class SavedLikeInfo
     {
         
-        public long ID { get; set; }
+        public long LikeID { get; set; }
         public long UserID { get; set; }
         public long RIDBActivity { get; set; }
         public long FacilityID { get; set; }

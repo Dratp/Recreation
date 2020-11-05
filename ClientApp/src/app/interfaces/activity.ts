@@ -6,6 +6,7 @@ export interface ActivityData {
     facilityLatitude: string;
     facilityDescription: string;
     id: number;
+    favorite?: boolean;
 }
 
 export interface ActivityDatas {
