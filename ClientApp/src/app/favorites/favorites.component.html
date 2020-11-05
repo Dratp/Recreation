@@ -5,13 +5,33 @@
 
     <div class="scrollbox">
 
-      <div *ngFor="let favorite of favorites ">
-        {{favorite.facilityName}} ({{favorite.RIDBActivity}})
+      <div *ngFor="let favorite of favorites">
+        <a class="button" href="#popup">{{favorite.facilityName}} ({{favorite.RIDBActivity}})</a>
+
+        <div id="popup" class="overlay">
+
+          <div class="popup">
+            <h2>{{favorites.facilityName}}</h2>
+
+            <div class="content">
+
+              <!--<app-facilitydescription></app-facilitydescription>-->
+
+              <div innerHTML="{{favorites.facilityDescription}}"></div>
+
+
+            </div>
+          </div>
+
+        </div>
+
       </div>
 
     </div>
 
   </div>
+
+
 
 
   <div class="right">

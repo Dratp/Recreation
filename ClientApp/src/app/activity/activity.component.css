@@ -64,8 +64,6 @@ h1 {
     background: rgba(255, 255, 255, 0.5);
   }
 
-
-
   .overlay:target {
     visibility: visible;
     opacity: 1;
@@ -107,7 +105,6 @@ h1 {
   font-weight: bold;
   text-decoration: none;
   color: #666;
-  
 }
 
   .popup .close:hover {
@@ -148,6 +145,6 @@ a{
 }
 
 
-a:hover{
-   border:dotted 1px black;
-}
+  a:hover {
+    border: dotted 1px black;
+  }

@@ -13,13 +13,10 @@ export class FavoritesComponent implements OnInit {
   user: UserInfo;
   favorites : UserFavorite[]
   
- 
-
   constructor(private UserService: SignedInUserService, private route: Router, private favoritesService: FavoriteService) { }
 
   ngOnInit() {
     this.favoritesService.GetUserFavorites(this.UserService.userId);
-
 
     console.log(this.UserService.userId)
     console.log(this.favoritesService.favorites)
