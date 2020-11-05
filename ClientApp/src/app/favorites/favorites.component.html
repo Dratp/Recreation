@@ -1,23 +1,23 @@
-<div>
+
 
   <div class="left">
     <h1>Favorite Locations</h1>
 
     <div class="scrollbox">
 
-      <div *ngFor="let favorite of favorites">
-        <a class="button" href="#popup">{{favorite.facilityName}} ({{favorite.RIDBActivity}})</a>
+      <div *ngFor="let favorite of likedFavorites">
+        <a class="button" href="#popup">{{favorite.facilityName}} ({{favorite.activity}})</a>
 
         <div id="popup" class="overlay">
 
           <div class="popup">
-            <h2>{{favorites.facilityName}}</h2>
+            <h2>{{likedFavorites.facilityName}}</h2>
 
             <div class="content">
 
               <!--<app-facilitydescription></app-facilitydescription>-->
 
-              <div innerHTML="{{favorites.facilityDescription}}"></div>
+              <div innerHTML="{{likedFavorites.facilityDescription}}"></div>
 
 
 
@@ -36,8 +36,8 @@
       <agm-marker *ngFor="let activity of favoritesService.likedFavorites"
                   [latitude]="activity.facilityLatitude"
                   [longitude]="activity.facilityLongitude">
-        <agm-info-window [latitude]=" activity.facilityLatitude"
-                         [longitude]="activity.facilityLongitude">{{activity.facilityName}}</agm-info-window>
+        <agm-info-window [latitude]="activity.facilityLatitude"
+                         [longitude]="activity.facilityLongitude">{{likedFavorites.facilityName}}</agm-info-window>
       </agm-marker>
     </agm-map>
 

@@ -23,7 +23,7 @@ export class FavoritesComponent implements OnInit {
     this.favoritesService.GetUserFavorites(this.UserService.userId);
 
     console.log(this.UserService.userId)
-    console.log(this.favoritesService.favorites)
+    console.log(this.favoritesService.likedFavorites)
     this.likedFavorites = this.favoritesService.likedFavorites
   }
 
