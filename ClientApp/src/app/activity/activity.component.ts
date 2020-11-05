@@ -14,9 +14,9 @@ import { FavoriteService } from '../services/favorite.service';
 export class ActivityComponent {
 
   userFavorite: UserFavorite;
-  activityname: string;
+  searchField: string;
   favorites: UserFavorite[]
-
+  filteredList: ActivityData[];
 
   constructor(
     private activitydataservice: ActivityDataService,
@@ -25,9 +25,11 @@ export class ActivityComponent {
   ) { }
 
   ngOnInit(): void {
+    console.log("Activity component ngOnInt");
     this.favoriteservice.GetUserFavorites(this.userdataservice.userId);
-    this.favorites = this.favoriteservice.favorites
-    this.GetFavorites();
+    this.favorites = this.favoriteservice.favorites;
+    this.filteredList = this.activitydataservice.activities;
+
   }
 
   onSelect(activity: ActivityData): void {
@@ -44,29 +46,8 @@ export class ActivityComponent {
   //  this.activitydataservice.getActivityByName(activityname).subscribe(
   //    activities => (this.activitydataservice.activities = activities));
   //}
+   
 
-  GetFavorites() {
-    console.log("Get Favorites method setting to False")
-    for (let act of this.activitydataservice.activities) {
-      act.favorite = false;
-    }
-
-    if (this.userdataservice.userId > 0) {
-      console.log(`Someone is logged in!! thier userID is ${this.userdataservice.userId}`);
-      console.log(this.favorites);
-      for (const fav of this.favorites) {
-        console.log(`${fav.RIDBActivity}`)
-        for (const act of this.activitydataservice.activities) {
-          if (fav.RIDBActivity == act.id) {
-            act.favorite = true;
-            console.log(`Setting ${act.id} to ${act.favorite}`);
-            break;
-          }
-        }
-      }
-    }
-    
-  }
 
   addLikedActivity(activity: ActivityData) {
     let favorite: UserFavorite = {
@@ -74,16 +55,22 @@ export class ActivityComponent {
       UserID: this.userdataservice.userId,
       RIDBActivity: activity.id
     }
-
+    activity.favorite = !activity.favorite;
     this.favoriteservice.FavoriteManager(favorite);
   }
 
   FavoriteCheck(act: ActivityData) {
-    
     if (act.favorite) {
       return true;
     }
     return false;
   }
+
+  Search() {
+    this.filteredList = this.activitydataservice.activities.filter(res => {
+      return res.facilityName.toLocaleLowerCase().match(this.searchField.toLocaleLowerCase());
+    });
+  }
+
 
 }

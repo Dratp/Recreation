@@ -7,7 +7,7 @@
     <app-activity></app-activity>
   </div>
   <div class="right">
-    <app-mapdisplay></app-mapdisplay>
+    <app-mapdisplay [places]="activitydataservice.activities" ></app-mapdisplay>
   </div>
   <div>
     <app-facilitydescription [facility]="activitydataservice.selectedActivity"></app-facilitydescription>
