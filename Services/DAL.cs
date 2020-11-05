@@ -19,7 +19,9 @@ namespace Recreation.Services
         public DAL(IConfiguration config)
         {
 
+
             db = new SqlConnection(config.GetConnectionString("kathryn"));
+
 
         }
 
@@ -34,13 +36,13 @@ namespace Recreation.Services
 
         public List<ActivityData> GetActivityDataList()
         {
-            List<ActivityData> data = db.Query<ActivityData>("SELECT RIDBAct.id, RIDB.FacilityID, RIDB.FacilityName, RIDBAct.Activity, RIDB.FacilityLatitude, RIDB.FacilityLongitude, RIDB.FacilityDescription FROM RIDB JOIN RIDBAct on RIDB.FacilityID=RIDBAct.FacilityID").AsList<ActivityData>();
+            List<ActivityData> data = db.Query<ActivityData>("SELECT RIDBAct.id, RIDB.FacilityID, RIDB.FacilityName, RIDBAct.Activity, RIDB.FacilityLatitude, RIDB.FacilityLongitude, RIDB.FacilityDescription, RIDB.FacilityPhone, RIDB.FacilityEmail FROM RIDB JOIN RIDBAct on RIDB.FacilityID=RIDBAct.FacilityID").AsList<ActivityData>();
             return data;
         }
 
         public List<ActivityData> GetActivityDataList(long userID)
         {
-            List<ActivityData> data = db.Query<ActivityData>("SELECT Likes.LikeID, RIDBAct.id, RIDB.FacilityID, RIDB.FacilityName, RIDBAct.Activity, RIDB.FacilityLatitude, RIDB.FacilityLongitude, RIDB.FacilityDescription FROM RIDB INNER JOIN RIDBAct on RIDB.FacilityID=RIDBAct.FacilityID LEFT JOIN Likes on RIDBAct.id=Likes.RIDBActivity").AsList<ActivityData>();
+            List<ActivityData> data = db.Query<ActivityData>("SELECT Likes.LikeID, RIDBAct.id, RIDB.FacilityID, RIDB.FacilityName, RIDBAct.Activity, RIDB.FacilityLatitude, RIDB.FacilityLongitude, RIDB.FacilityDescription, RIDB.FacilityPhone, RIDB.FacilityEmail FROM RIDB INNER JOIN RIDBAct on RIDB.FacilityID=RIDBAct.FacilityID LEFT JOIN Likes on RIDBAct.id=Likes.RIDBActivity").AsList<ActivityData>();
             return data;
         }
 

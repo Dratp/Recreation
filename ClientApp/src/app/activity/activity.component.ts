@@ -12,7 +12,7 @@ import { FavoriteService } from '../services/favorite.service';
 })
 
 export class ActivityComponent {
-  activity: ActivityData;
+
   userFavorite: UserFavorite;
   searchField: string;
   favorites: UserFavorite[]
@@ -30,6 +30,10 @@ export class ActivityComponent {
     this.favorites = this.favoriteservice.favorites;
     this.filteredList = this.activitydataservice.activities;
 
+  }
+
+  onSelect(activity: ActivityData): void {
+    this.activitydataservice.selectedActivity = activity;
   }
 
   //getActivityList() {

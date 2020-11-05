@@ -10,6 +10,7 @@ import { SignedInUserService } from './signed-in-user.service';
 export class ActivityDataService {
   ChosenActivity: string;
   activities: ActivityData[];
+  selectedActivity: ActivityData;
 
 
   constructor(private http: HttpClient, private user: SignedInUserService) {
