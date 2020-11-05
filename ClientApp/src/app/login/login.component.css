@@ -1,3 +1,10 @@
+form {
+  z-index: 1000;
+}
+center {
+  z-index: 1000;
+}
+
 form.pageLayout {
   width: 65%;
   margin-left: auto;
@@ -35,3 +42,4 @@ button {
     transform: translateY(4px);
     color: white;
   }
+
