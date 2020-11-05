@@ -1,6 +1,15 @@
 <div>
 
-  
+  <div class="left">
+    <h1>Favorite Locations</h1>
+
+
+    <div *ngFor="let favorite of favorites ">
+      {{favorite.facilityName}}
+    </div>
+  </div>
+
+
   <div class="right">
     <div class="column">
       <agm-map [latitude]="44.5" [longitude]="-85" [zoom]="6.2">
@@ -14,16 +23,6 @@
   </div>
   
   
-  <div>
-    //TestCode
-    {{user}}
-  </div>
-  
 
-<div *ngFor="let favorite of favorites ">
-  {{favorite.ridbActivity}}
-  {{favorite.facilityLatitude}}
-  {{favorite.facilityLongitude}}
-</div>
 
 </div>
