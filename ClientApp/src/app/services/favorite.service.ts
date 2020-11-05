@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { UserInfo, UserFavorite, SavedLikeInfo } from '../interfaces/user';
 import { Observable } from 'rxjs';
 import { ActivityComponent } from '../activity/activity.component';
-import { SignedInUserService } from './signed-in-user.service';
+
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +17,7 @@ export class FavoriteService {
   
 
 
-  constructor(private http: HttpClient, private signinuserservice: SignedInUserService) {
+  constructor(private http: HttpClient,) {
     this.favorites = [];
   }
 

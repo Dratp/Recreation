@@ -18,7 +18,7 @@ namespace Recreation.Services
 
         public DAL(IConfiguration config)
         {
-            db = new SqlConnection(config.GetConnectionString("Connection"));
+            db = new SqlConnection(config.GetConnectionString("Heizer"));
         }
 
 
@@ -36,9 +36,15 @@ namespace Recreation.Services
             return data;
         }
 
+        public List<ActivityData> GetActivityDataList(long userID)
+        {
+            List<ActivityData> data = db.Query<ActivityData>("SELECT Likes.LikeID, RIDBAct.id, RIDB.FacilityID, RIDB.FacilityName, RIDBAct.Activity, RIDB.FacilityLatitude, RIDB.FacilityLongitude, RIDB.FacilityDescription FROM RIDB INNER JOIN RIDBAct on RIDB.FacilityID=RIDBAct.FacilityID LEFT JOIN Likes on RIDBAct.id=Likes.RIDBActivity").AsList<ActivityData>();
+            return data;
+        }
+
         public List<SavedLikeInfo> GetLikes(long userID)
         {
-            List<SavedLikeInfo> data = db.Query<SavedLikeInfo>($"SELECT Likes.id, Likes.UserID, Likes.RIDBActivity, RIDBAct.FacilityID, RIDB.FacilityName, RIDB.FacilityLatitude, RIDB.FacilityLongitude, RIDB.FacilityTypeDescription From RIDB Join RIDBAct On RIDB.FacilityID = RIDBAct.FacilityID Join Likes On Likes.RIDBActivity = RIDBAct.id Where UserID = { userID}").AsList<SavedLikeInfo>();
+            List<SavedLikeInfo> data = db.Query<SavedLikeInfo>($"SELECT Likes.Likeid, Likes.UserID, Likes.RIDBActivity, RIDBAct.FacilityID, RIDB.FacilityName, RIDB.FacilityLatitude, RIDB.FacilityLongitude, RIDB.FacilityTypeDescription From RIDB Join RIDBAct On RIDB.FacilityID = RIDBAct.FacilityID Join Likes On Likes.RIDBActivity = RIDBAct.id Where UserID = { userID}").AsList<SavedLikeInfo>();
 
             //This pulls data 
             return data;
@@ -62,7 +68,7 @@ namespace Recreation.Services
             long id = AddLike(userID, activityID);
             data.Add(new Likes()
             {
-                ID = id,
+                LikeID = id,
                 UserID = userID,
                 RIDBActivity = activityID
             }

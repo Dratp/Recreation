@@ -12,9 +12,9 @@
       <div id="content-wrapper">
         <header id="header">
           <div *ngIf="userdataservice.username" class="button">
-            <a class="button" href="#popup">{{activity.id}}{{activity.facilityName}} ({{activity.activity}})</a>
-            <span *ngIf="FavoriteCheck(activity.id)"><button (click)="addLikedActivity(activity)" class="megusta">♥</button></span>
-            <span *ngIf="!FavoriteCheck(activity.id)"><button (click)="addLikedActivity(activity)" class="nomegusta">♥</button></span>
+            <a class="button" href="#popup">{{activity.id}} {{activity.facilityName}} ({{activity.activity}})</a>
+            <span *ngIf="FavoriteCheck(activity)"><button (click)="addLikedActivity(activity)" class="megusta">♥</button></span>
+            <span *ngIf="!FavoriteCheck(activity)"><button (click)="addLikedActivity(activity)" class="nomegusta">♥</button></span>
           </div>
 
           <div *ngIf="!userdataservice.username" class="button">

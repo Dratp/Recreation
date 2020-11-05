@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { UserInfo, CreatedUser } from '../interfaces/user';
+import { UserInfo, CreatedUser, UserFavorite } from '../interfaces/user';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
+import { ActivityDataService } from './activity-data.service';
+import { FavoriteService } from './favorite.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +13,7 @@ export class SignedInUserService {
   // username and user ID are assigned when a user is logged in and then passed around the components
   username: string;
   userId: number;
+  favs: UserFavorite[];
 
   // user response and user reason are for the login function
   // if true / success a user logged in
@@ -27,7 +30,8 @@ export class SignedInUserService {
     this.userId = 0;
     this.userResponse = false;
     this.userReason = "";
-    this.newUser = { firstName: "", lastName: "", city: "", state: "", zip: "", userName: "", password: ""};
+    this.newUser = { firstName: "", lastName: "", city: "", state: "", zip: "", userName: "", password: "" };
+    this.favs = [];
   }
 
   CreateUser(firstName:string, lastName:string, zip:string, newUserName:string, pass:string) {
@@ -59,6 +63,7 @@ export class SignedInUserService {
     this.userId = user.userID;
     this.userResponse = user.response;
     this.userReason = user.reason;
+
     if (user.response) {
       this.route.navigate([""]);
     }

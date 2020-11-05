@@ -52,6 +52,33 @@ namespace Recreation.Controllers
             return goodstuff;
         }
 
+        
+        [HttpGet]
+        [Route("{activity}/{userID}")] // api/Activity/(Variable)  : Returns all places that have a certain activity available
+        public List<ActivityData> GetActivityDataByActivity(string activity, long userID)
+        {
+            List<ActivityData> actByAct = db.GetActivityDataList(userID);
+            List<ActivityData> goodstuff = new List<ActivityData>();
+
+            foreach (ActivityData act in actByAct)
+            {
+                if (act.Activity == activity)
+                {
+                    if (act.LikeID > 0)
+                    {
+                        act.favorite = true;
+                    }
+                    else
+                    {
+                        act.favorite = false;
+                    }
+                    goodstuff.Add(act);
+                }
+            }
+            return goodstuff;
+        }
+        
+
         [HttpGet]
         [Route("{activity}/Number")] // api/Activity/(Variable)/Number  : Returns a number that represents the amount of places that have a certain activity available
         public int GetActivityDataByActivityNum(string activity)
