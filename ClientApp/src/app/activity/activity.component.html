@@ -3,7 +3,7 @@
 
   <input [(ngModel)]="activityname" placeholder="Enter Activity">
 
-  <button class="searchbutton" (click)="activitydataservice.populateList(activityname)">Enter</button>
+  <button class="btn-primary" (click)="activitydataservice.populateList(activityname)">Enter</button>
 
   <div class="scrollbox">
     <div *ngFor="let activity of activitydataservice.activities">

@@ -60,6 +60,7 @@ body {
   background-color: #f1f2f2;
   background-repeat: no-repeat;
   height: 100%;
+  overflow: hidden;
 }
 
 section {
@@ -201,7 +202,7 @@ section {
   }
 
   100% {
-    top: 110%;
+
     transform: translateX(160px) rotate(-45deg);
     opacity: 0;
   }
