@@ -12,7 +12,7 @@ import { ActivityComponent } from '../activity/activity.component';
 export class MapdisplayComponent {
   activities: ActivityData[];
   activity: ActivityData;
-  title = 'My first AGM project';
+  title = 'Location Map';
   lat :number;
   lng : number;
 

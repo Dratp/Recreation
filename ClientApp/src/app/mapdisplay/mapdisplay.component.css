@@ -1,7 +1,17 @@
 agm-map {
-
   height: 500px;
   width: 600px;
   padding-right: 20px;
   
+}
+
+div {
+  background-color: #DEC19B;
+}
+
+h1 {
+  align-content: center;
+  text-align: center;
+  color: white;
+  font-family: "Trebuchet MS", Tahoma, Arial, sans-serif;
 }
