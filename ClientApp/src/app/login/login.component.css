@@ -1,23 +1,24 @@
-form {
-  z-index: 1000;
-}
-center {
-  z-index: 1000;
-}
 
 form.pageLayout {
   width: 65%;
-  margin-left: auto;
+  padding-left: 10%;
   margin-right: auto;
   padding-top: 25px;
   padding-bottom: 25px;
   box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
   font-weight: 300;
-  background-color: white;
+  background-color: #DEC19B;
   border-radius: 5px;
   border-style: solid;
-  border-color: #bbb;
+  border-color: black;
+  transition: border-width .5s linear;
 }
+
+  form.pageLayout:hover {
+    border-width: 10px;
+  }
+
+
 
 button {
   padding: 3px 15px;

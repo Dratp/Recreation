@@ -60,7 +60,7 @@ h1 {
   border: 1px solid #666;
   width: 700px;
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
-  position: relative;
+  position: center;
   z-index: 1000;
 }
 
