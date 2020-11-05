@@ -5,8 +5,8 @@ html {
 .left {
   position: absolute;
   background-color: #DEC19B;
-  width: 12%;
-  left: 12%;
+  width: 14em;
+  left: 230px;
   top: 10%;
   z-index: 100;
   border: solid 5px #000000;
@@ -23,7 +23,7 @@ html {
   position: absolute;
   background-color: #DEC19B;
   width: 25%;
-  left: 25%;
+  left: 30.5%;
   top: 10%;
   z-index: 100;
   border: solid 5px #000000;
@@ -38,7 +38,7 @@ html {
 
 .right {
   position: absolute;
-  left: 51%;
+  left: 62%;
   top: 10%;
   z-index: 10;
   border: solid 5px black;
