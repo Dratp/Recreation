@@ -1,14 +1,15 @@
 <h1>Activities</h1>
+
 <div class="search">
 
-  <input [(ngModel)]="searchField" placeholder="Search Places" (input)="Search()" /> {{searchField}} 
+  <input [(ngModel)]="searchField" placeholder="Search Places" (input)="Search()" /> {{searchField}}
 
-
+</div>
 
 <div class="scrollbox">
 
   <div *ngIf="!searchField">
-     <div *ngFor="let activity of activitydataservice.activities" (click)="onSelect(activity)">
+    <div *ngFor="let activity of activitydataservice.activities" (click)="onSelect(activity)">
       <div id="content-wrapper">
 
 
@@ -29,21 +30,6 @@
       </div>
 
 
-      <div id="popup" class="overlay">
-        <div class="popup">
-          <h2>{{activity.facilityName}}</h2>
-
-          <div class="content">
-
-            <!--<app-facilitydescription></app-facilitydescription>-->
-            
-            <div innerHTML="{{activity.facilityDescription}}"></div>
-              
-
-          </div>
-        </div>
-
-      </div>
     </div>
   </div>
   <div *ngIf="searchField">
@@ -74,7 +60,7 @@
     </div>
 
 
-</div>
+  </div>
 
 </div>
 
