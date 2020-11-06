@@ -71,7 +71,9 @@ export class FavoriteService {
 
   DeleteFavorite(favoriteID: number) {
     console.log(`Favorite service API call made:  ${this.apiUrl}/delete/${favoriteID}`);
-    return this.http.delete(this.apiUrl + `/delete/${favoriteID}`);
+    this.http.delete(this.apiUrl + `/delete/${favoriteID}`).subscribe(data => {
+      console.log(data);
+    });
   }
 
 }
