@@ -15,7 +15,7 @@
 
   </div>
 
-  <div class="right" style="background-color:#bbb;">
+  <div class="right">
     <agm-map [latitude]="44.5" [longitude]="-85" [zoom]="6.2">
       <agm-marker *ngFor="let activity of favoritesService.likedFavorites"
                   [latitude]="activity.facilityLatitude"
