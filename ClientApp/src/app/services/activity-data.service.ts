@@ -32,8 +32,7 @@ export class ActivityDataService {
     if (this.user.userId > 0) {
       return (this.http.get<ActivityData[]>(`${this.apiUrl}/${activityname}/${this.user.userId}`));
     }
-
-    console.log("Getting activites");
+    
     return (this.http.get<ActivityData[]>(`${this.apiUrl}/${activityname}`));
   }
 

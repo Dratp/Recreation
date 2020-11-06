@@ -5,32 +5,17 @@
 
     <div class="scrollbox">
 
-      <div *ngFor="let favorite of likedFavorites">
-        <a class="button" href="#popup">{{favorite.facilityName}} ({{favorite.activity}})</a>
-
-        <div id="popup" class="overlay">
-
-          <div class="popup">
-            <h2>{{likedFavorites.facilityName}}</h2>
-
-            <div class="content">
-
-              <!--<app-facilitydescription></app-facilitydescription>-->
-
-              <div innerHTML="{{likedFavorites.facilityDescription}}"></div>
-
-
-
-            </div>
-          </div>
-
-        </div>
+      <div *ngFor="let favorite of this.favoritesService.likedFavorites">
+        <span>{{favorite.likeID}} {{favorite.facilityName}} ({{favorite.activity}})</span>
+        <span *ngIf="favorite.likeID"><button (click)="DeleteFav(favorite.likeID)" class="megusta">♥</button></span>
+        <span *ngIf="!favorite.likeID"><button (click)="DeleteFav(favorite.likeID)" class="nomegusta">♥</button></span>
 
       </div>
 
     </div>
 
-    </div>
+  </div>
+
   <div class="right" style="background-color:#bbb;">
     <agm-map [latitude]="44.5" [longitude]="-85" [zoom]="6.2">
       <agm-marker *ngFor="let activity of favoritesService.likedFavorites"

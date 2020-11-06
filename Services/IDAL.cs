@@ -26,7 +26,7 @@ namespace Recreation.Services
 
         public List<string> GetUniqueActivityList();
         public List<ActivityData> GetActivityDataList(long userID);
-
-
+        public void DeleteFavorite(long LikeID);
+            
     }
 }

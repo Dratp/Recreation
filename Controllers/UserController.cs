@@ -51,5 +51,12 @@ namespace Recreation.Controllers
             return db.GetLikes(userID);
             //Returns likes
         }
+
+        [HttpDelete]
+        [Route("like/delete/{LikeID}")]
+        public void DeleteLike(long LikeID)
+        {
+            db.DeleteFavorite(LikeID);
+        }
     }
 }

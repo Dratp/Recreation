@@ -25,7 +25,7 @@ export interface CreatedUser {
 }
 
 export interface SavedLikeInfo {
-  id: number;
+  LikeID: number;
   UserID?: number;
   RIDBActivity: number;
   facilityID: number;

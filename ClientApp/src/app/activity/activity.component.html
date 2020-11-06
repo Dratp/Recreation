@@ -19,10 +19,7 @@
 
 
           <span *ngIf="activity.favorite"><button (click)="addLikedActivity(activity)" class="megusta">♥</button></span>
-
-          <span *ngIf="!activity.favorite">
-            <button (click)="addLikedActivity(activity)" class="nomegusta">♥</button>
-          </span>
+          <span *ngIf="!activity.favorite"><button (click)="addLikedActivity(activity)" class="nomegusta">♥</button></span>
 
         </div>
 
