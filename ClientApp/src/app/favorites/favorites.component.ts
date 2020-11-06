@@ -32,7 +32,7 @@ export class FavoritesComponent implements OnInit {
     console.log("Delete button pressed!!!!");
     console.log(`Like ID is: ${favoriteID}`);
     this.favoritesService.DeleteFavorite(favoriteID);
-
+    this.ngOnInit();
 
   }
 
