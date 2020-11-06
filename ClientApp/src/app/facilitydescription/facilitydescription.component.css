@@ -1,6 +1,6 @@
 .overlay {
   position: absolute;
-  z-index: 750;
+  z-index: 1000;
   top: 0;
   bottom: 0;
   left: 0;
@@ -22,15 +22,6 @@
     cursor: default;
   }
 
-.popup .cancel {
-  position:absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 100%;
-  cursor: default;
-}
-
   .overlay:target {
     visibility: visible;
     opacity: 1;
@@ -41,10 +32,10 @@
   padding: 20px;
   background: #fff;
   border: 1px solid #666;
-  width: 700px;
+  width: 900px;
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
   position: center;
-  z-index: 1000;
+  z-index: 750;
   overflow: auto;
 }
 
@@ -64,3 +55,15 @@
   font-size: small;
 }
 
+  .popup .cancel {
+    position: center;
+    top: 0px;
+    left: 0px;
+    width: 50%;
+    height: 100%;
+    cursor: default;
+  }
+
+  a:hover {
+      border: dotted 1px black;
+  }
