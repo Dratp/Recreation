@@ -55,8 +55,6 @@ export class FavoriteService {
   //api call
   GetFavoriteList(userID: number): Observable<SavedLikeInfo []>{
 
-    console.log(userID, 'at GetFavoriteList in favorite service')
-
     return this.http.get<SavedLikeInfo[]>(this.apiUrl + `/${userID}`);
     
   }
@@ -69,6 +67,13 @@ export class FavoriteService {
     for (let i = 0; i < favsinfo.length; i++) {
       this.likedFavorites.push(favsinfo[i]);
     }
+  }
+
+  DeleteFavorite(favoriteID: number) {
+    console.log(`Favorite service API call made:  ${this.apiUrl}/delete/${favoriteID}`);
+    this.http.delete(this.apiUrl + `/delete/${favoriteID}`).subscribe(data => {
+      console.log(data);
+    });
   }
 
 }

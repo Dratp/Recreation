@@ -20,7 +20,11 @@ namespace Recreation.Services
         {
 
 
-            db = new SqlConnection(config.GetConnectionString("Tyler"));
+
+            
+
+            db = new SqlConnection(config.GetConnectionString("Heizer"));
+
 
 
         }
@@ -135,11 +139,16 @@ namespace Recreation.Services
             }
         }
 
-
         public List<string> GetUniqueActivityList()
         {
             List<string> data = db.Query<string>($"SELECT distinct Activity FROM RIDBAct").AsList<string>();
             return data;
+        }
+
+        public void DeleteFavorite(long LikeID)
+        {
+            string commandstring = $"Delete From Likes Where Likeid = {LikeID}";
+            db.Query(commandstring);
         }
     }
 }

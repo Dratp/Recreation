@@ -20,22 +20,22 @@ export class FavoritesComponent implements OnInit {
   constructor(private UserService: SignedInUserService, private route: Router, private favoritesService: FavoriteService) { }
 
   ngOnInit() {
+    this.favoritesService.likedFavorites = [];
     this.favoritesService.GetUserFavorites(this.UserService.userId);
+    this.likedFavorites = this.favoritesService.likedFavorites;
 
-    console.log(this.UserService.userId)
-    console.log(this.favoritesService.likedFavorites)
-    this.likedFavorites = this.favoritesService.likedFavorites
+    console.log(this.favoritesService.likedFavorites);
+
   }
 
+  DeleteFav(favoriteID: number) {
+    console.log("Delete button pressed!!!!");
+    console.log(`Like ID is: ${favoriteID}`);
+    this.favoritesService.DeleteFavorite(favoriteID);
 
 
+  }
 
-  //getFavoriteList(userId: number) {
-  //  this.favoritesService.GetFavoriteList
-  //    (userId).subscribe(
-  //      results => (this.favorites = results));
-
-   // console.log(this.UserService.userId) // this prints}
 
 
   }
