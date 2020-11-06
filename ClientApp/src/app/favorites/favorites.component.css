@@ -189,11 +189,11 @@ h1 {
   color: #a8a0a2;
 }
 
-a {
+span {
   color: black;
 }
 
 
-  a:hover {
+  span:hover {
     border: dotted 1px black;
   }
