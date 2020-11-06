@@ -16,6 +16,7 @@ export class ActivityDataService {
   constructor(private http: HttpClient, private user: SignedInUserService) {
     this.ChosenActivity = "";
     this.activities = [];
+    
   }
 
   apiUrl = '/api/Activity';
