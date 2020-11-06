@@ -39,11 +39,12 @@ export class SignedInUserService {
     this.newUser.userID = -1;
     //console.log(this.newUser);
     this.SendUserInfo(this.newUser);
+    this.route.navigate([""]);
   }
 
   SendUserInfo(user: CreatedUser) {
     //console.log(this.newUser);
-    return this.http.post<CreatedUser>(this.newUserApiUrl, this.newUser).subscribe();
+    return this.http.post<CreatedUser>(this.newUserApiUrl, this.newUser).subscribe(results => this.SetUser(results));
   }
 
   /*

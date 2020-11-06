@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
 
   createProfile(firstName: string, lastName: string, zip: string, newUserName: string, pass: string) {
     this.UserService.CreateUser(firstName, lastName, zip, newUserName, pass);
-    this.UserService.signIn(newUserName, pass);
+    //this.UserService.signIn(newUserName, pass);
 
   }
   /*createUser(firstName: string, lastName: string, city: string, state: string, zip: string, newUserName: string, pass: string) {
