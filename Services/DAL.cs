@@ -20,7 +20,7 @@ namespace Recreation.Services
         {
 
 
-            db = new SqlConnection(config.GetConnectionString("Dave"));
+            db = new SqlConnection(config.GetConnectionString("Tyler"));
 
         }
 

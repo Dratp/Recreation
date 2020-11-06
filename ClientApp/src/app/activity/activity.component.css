@@ -36,6 +36,14 @@ h1 {
   margin: 50px 0;
 }
 
+h3 {
+  text-align: center;
+  font-family: "Trebuchet MS", Tahoma, Arial, sans-serif;
+  color: #FFFFFF;
+  text-shadow: 0 1px 0 #fff;
+  margin: 50px 0;
+}
+
 #content-wrapper {
   margin: 0 auto;
   background: #fff;
@@ -47,7 +55,7 @@ h1 {
 }
 
 .scrollbox {
-  height: 500px;
+  height: 581.94px;
   width: 100%;
   overflow-y: scroll;
   background-color: #DEC19B;
@@ -69,3 +77,8 @@ a{
   a:hover {
     border: dotted 1px black;
   }
+
+button {
+  width: 25px;
+  height: 25px;
+}

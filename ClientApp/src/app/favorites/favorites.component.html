@@ -3,13 +3,18 @@
     <h1>Favorite Locations</h1>
 
     <div class="scrollbox">
-
+      
       <div *ngFor="let favorite of this.favoritesService.likedFavorites">
-        <span>{{favorite.likeID}} {{favorite.facilityName}} ({{favorite.activity}})</span>
-        <span *ngIf="favorite.likeID"><button (click)="DeleteFav(favorite.likeID)" class="megusta">♥</button></span>
-        <span *ngIf="!favorite.likeID"><button (click)="DeleteFav(favorite.likeID)" class="nomegusta">♥</button></span>
+        <div id="content-wrapper">
+          <span *ngIf="favorite.likeID"><button (click)="DeleteFav(favorite.likeID)" class="megusta" style="float:right">♥</button></span>
+          <span *ngIf="!favorite.likeID"><button (click)="DeleteFav(favorite.likeID)" class="nomegusta" style="float:right">♥</button></span>
+
+          <span style="float:left">{{favorite.facilityName}} ({{favorite.activity}})</span><br />
+
+        </div>
 
       </div>
+      
 
     </div>
 
