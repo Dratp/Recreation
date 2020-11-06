@@ -20,12 +20,7 @@ namespace Recreation.Services
         {
 
 
-
-            
-
-            db = new SqlConnection(config.GetConnectionString("Heizer"));
-
-
+            db = new SqlConnection(config.GetConnectionString("Tyler"));
 
         }
 
