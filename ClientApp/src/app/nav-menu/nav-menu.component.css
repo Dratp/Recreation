@@ -1,11 +1,3 @@
-a.navbar-brand {
-  text-align: left;
-  word-break: break-all;
-  z-index: 1000;
-  font-family: "Trebuchet MS", Tahoma, Arial, sans-serif;
-  
-}
-
 a.nav-link {
   font-family: "Trebuchet MS", Tahoma, Arial, sans-serif;
   font: bold "Tebuchet MS";
