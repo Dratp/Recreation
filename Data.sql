@@ -1,6 +1,6 @@
 USE [master]
 GO
-/****** Object:  Database [Recdit]    Script Date: 11/6/2020 9:40:13 AM ******/
+/****** Object:  Database [Recdit]    Script Date: 11/6/2020 9:54:34 AM ******/
 CREATE DATABASE [Recdit]
  CONTAINMENT = NONE
  ON  PRIMARY 
@@ -80,7 +80,7 @@ ALTER DATABASE [Recdit] SET QUERY_STORE = OFF
 GO
 USE [Recdit]
 GO
-/****** Object:  Table [dbo].[Likes]    Script Date: 11/6/2020 9:40:13 AM ******/
+/****** Object:  Table [dbo].[Likes]    Script Date: 11/6/2020 9:54:34 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -95,7 +95,7 @@ CREATE TABLE [dbo].[Likes](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[RIDB]    Script Date: 11/6/2020 9:40:13 AM ******/
+/****** Object:  Table [dbo].[RIDB]    Script Date: 11/6/2020 9:54:34 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -116,7 +116,7 @@ CREATE TABLE [dbo].[RIDB](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[RIDBAct]    Script Date: 11/6/2020 9:40:13 AM ******/
+/****** Object:  Table [dbo].[RIDBAct]    Script Date: 11/6/2020 9:54:34 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -131,7 +131,7 @@ CREATE TABLE [dbo].[RIDBAct](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[RIDBAddress]    Script Date: 11/6/2020 9:40:13 AM ******/
+/****** Object:  Table [dbo].[RIDBAddress]    Script Date: 11/6/2020 9:54:34 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -146,7 +146,7 @@ CREATE TABLE [dbo].[RIDBAddress](
 	[AddressStateCode] [nvarchar](10) NULL
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Users]    Script Date: 11/6/2020 9:40:13 AM ******/
+/****** Object:  Table [dbo].[Users]    Script Date: 11/6/2020 9:54:34 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -158,7 +158,7 @@ CREATE TABLE [dbo].[Users](
 	[FirstName] [nvarchar](35) NULL,
 	[LastName] [nvarchar](35) NULL,
 	[ZIP] [nvarchar](10) NULL,
-	[City] [nvarchar](50) NOT NULL,
+	[City] [nvarchar](50) NULL,
 	[State] [nvarchar](10) NULL,
  CONSTRAINT [PK_Users] PRIMARY KEY CLUSTERED 
 (
@@ -3099,3 +3099,4 @@ USE [master]
 GO
 ALTER DATABASE [Recdit] SET  READ_WRITE 
 GO
+
