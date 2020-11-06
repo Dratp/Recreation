@@ -2,7 +2,8 @@
 
 <div class="search">
 
-  <input [(ngModel)]="searchField" placeholder="Search Places" (input)="Search()" /> {{searchField}}
+  <h3>{{activity}}</h3>
+  <input [(ngModel)]="searchField" placeholder="Search Places" (input)="Search()" />
 
 </div>
 
@@ -12,45 +13,47 @@
     <div *ngFor="let activity of activitydataservice.activities" (click)="onSelect(activity)">
       <div id="content-wrapper">
 
-
-
         <div *ngIf="userdataservice.username" class="button">
 
-          <a class="button" href="#popup">{{activity.facilityName}} ({{activity.activity}})</a>
+          <a class="button" href="#popup">{{activity.facilityName}} </a>
 
+          <span *ngIf="activity.favorite"><button (click)="addLikedActivity(activity)" class="megusta" style="float:right">♥</button></span>
 
-          <span *ngIf="activity.favorite"><button (click)="addLikedActivity(activity)" class="megusta">♥</button></span>
-          <span *ngIf="!activity.favorite"><button (click)="addLikedActivity(activity)" class="nomegusta">♥</button></span>
+          <span *ngIf="!activity.favorite"><button (click)="addLikedActivity(activity)" class="nomegusta" style="float:right">♥</button></span>
 
         </div>
 
         <div *ngIf="!userdataservice.username" class="button">
-          <a class="button" href="#popup">{{activity.facilityName}} ({{activity.activity}})</a>
+
+          <a class="button" href="#popup">{{activity.facilityName}}</a>
+
         </div>
       </div>
 
 
     </div>
   </div>
+
+
   <div *ngIf="searchField">
-    <div *ngFor="let activity of filteredList">
+    <div *ngFor="let activity of filteredList" (click)="onSelect(activity)">
 
       <div id="content-wrapper">
 
         <div *ngIf="userdataservice.username" class="button">
 
-          <a class="button" href="#popup">{{activity.facilityName}} ({{activity.activity}})</a>
+          <a class="button" href="#popup">{{activity.facilityName}}</a>
 
-          <span *ngIf="activity.favorite"><button (click)="addLikedActivity(activity)" class="megusta">♥</button></span>
+          <span *ngIf="activity.favorite"><button (click)="addLikedActivity(activity)" class="megusta" style="float:right">♥</button></span>
 
           <span *ngIf="!activity.favorite">
-            <button (click)="addLikedActivity(activity)" class="nomegusta">♥</button>
+            <button (click)="addLikedActivity(activity)" class="nomegusta" style="float:right">♥</button>
           </span>
 
         </div>
 
         <div *ngIf="!userdataservice.username" class="button">
-          <a class="button" href="#popup">{{activity.facilityName}} ({{activity.activity}})</a>
+          <a class="button" href="#popup">{{activity.facilityName}}</a>
 
 
         </div>

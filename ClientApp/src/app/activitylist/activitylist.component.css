@@ -22,16 +22,7 @@
       left: .1em;
     }
 
-    .activitylist li.selected {
-      background-color: white;
-      color: white;
-    }
 
-
-      .activitylist li.selected:hover {
-        background-color: #F5F5AF;
-        color: white;
-      }
 
   .activitylist .activity {
     font-size: medium;
@@ -45,6 +36,7 @@
     margin-right: .8em;
     border-radius: 4px 0 0 4px; 
   }
+
 
 h4 {
   text-align: center;

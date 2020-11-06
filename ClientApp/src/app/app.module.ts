@@ -34,7 +34,7 @@ import { FacilitydescriptionComponent } from './facilitydescription/facilitydesc
     FormsModule,
     AppRoutingModule,
     AgmCoreModule.forRoot({
-      apiKey: ''
+      apiKey: 'AIzaSyAM6hAzGZT_Gierz7KQb3RlHT6v-xSVW34'
      
     })
   ],
