@@ -5,7 +5,7 @@
     <div class="scrollbox">
 
       <div *ngFor="let favorite of this.favoritesService.likedFavorites">
-        <span>{{favorite.likeID}} {{favorite.facilityName}} ({{favorite.activity}})</span>
+        <span>{{favorite.facilityName}} ({{favorite.activity}})</span>
         <span *ngIf="favorite.likeID"><button (click)="DeleteFav(favorite.likeID)" class="megusta">♥</button></span>
         <span *ngIf="!favorite.likeID"><button (click)="DeleteFav(favorite.likeID)" class="nomegusta">♥</button></span>
 
