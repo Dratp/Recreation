@@ -38,7 +38,7 @@ import { SortPipe } from './pipes/sort.pipe';
     FormsModule,
     AppRoutingModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyDrhbSG8hl5VvTVQm5dq1kcOsE_thvjbjE'
+      apiKey: 'Place your google API Key here'
      
     })
   ],
