@@ -9,14 +9,14 @@ html {
   left: 258px;
   top: 10%;
   z-index: 100;
-  border: solid 5px #000000;
+  border: solid 3px #000000;
   border-radius: 5px;
   box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
   transition: border-width .5s linear;
 }
 
 .left:hover {
-  border-width: 10px;
+  border-width: 5px;
 }
 
 .middle {
@@ -26,14 +26,14 @@ html {
   left: 31%;
   top: 10%;
   z-index: 100;
-  border: solid 5px #000000;
+  border: solid 3px #000000;
   border-radius: 5px;
   box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
   transition: border-width .5s linear;
 }
 
-  .middle:hover {
-    border-width: 10px;
+ .middle:hover {
+    border-width: 5px;
   }
 
 .right {
@@ -41,14 +41,14 @@ html {
   left: 62%;
   top: 10%;
   z-index: 10;
-  border: solid 5px black;
+  border: solid 3px black;
   border-radius: 5px;
   transition: border-width .5s linear;
   box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 }
 
 .right:hover {
-  border-width: 10px;
+  border-width: 5px;
 }
 
 

@@ -16,6 +16,13 @@
     border-radius: 4px;
   }
 
+    .activitylist li.selected {
+      color: #607D8B;
+      background-color: #DDD;
+      left: .1em;
+      font-weight: bold;
+    }
+
     .activitylist li:hover {
       color: #607D8B;
       background-color: #DDD;

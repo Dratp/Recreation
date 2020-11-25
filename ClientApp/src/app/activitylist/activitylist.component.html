@@ -1,9 +1,9 @@
 <h4>Activity List</h4>
 
 <br />
-
+<!--https://youtu.be/Zca69OB2b0U?t=1329 Show selected Activity with different styling-->
 <ul class="activitylist">
-  <li *ngFor="let activity of uniqueActs" [class.selected]="activity === chosenActivity" (click)="chooseActivity(activity)">
+  <li [class.selected]="activity === selectedActivity" *ngFor="let activity of uniqueActs" (click)="chooseActivity(activity)">
     <span class="activity">{{activity}}</span>
   </li>
 </ul>

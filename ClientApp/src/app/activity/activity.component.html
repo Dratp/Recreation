@@ -1,4 +1,4 @@
-<h1>Activities</h1>
+<h1>Locations</h1>
 
 <div class="search">
 
@@ -10,12 +10,13 @@
 <div class="scrollbox">
 
   <div *ngIf="!searchField">
-    <div *ngFor="let activity of activitydataservice.activities" (click)="onSelect(activity)">
+    <div *ngFor="let activity of activitydataservice.activities|sort:['facilityName']" (click)="onSelect(activity)">
       <div id="content-wrapper">
 
         <div *ngIf="userdataservice.username" class="button">
 
-          <a class="button" href="#popup">{{activity.facilityName}} ({{activity.activity}}) </a>
+          <!--<a class="button" href="#popup">{{activity.facilityName}} ({{activity.activity}}) </a>-->
+          <a class="button" href="#popup">{{activity.facilityName}} </a>
 
           <span *ngIf="activity.favorite"><button (click)="addLikedActivity(activity)" class="megusta" style="float:right">♥</button></span>
 
@@ -25,7 +26,8 @@
 
         <div *ngIf="!userdataservice.username" class="button">
 
-          <a class="button" href="#popup">{{activity.facilityName}} ({{activity.activity}})</a>
+          <!--<a class="button" href="#popup">{{activity.facilityName}} ({{activity.activity}})</a>-->
+          <a class="button" href="#popup">{{activity.facilityName}} </a>
 
         </div>
       </div>
@@ -42,7 +44,8 @@
 
         <div *ngIf="userdataservice.username" class="button">
 
-          <a class="button" href="#popup">{{activity.facilityName}} ({{activity.activity}})</a>
+          <!--<a class="button" href="#popup">{{activity.facilityName}} ({{activity.activity}})</a>-->
+          <a class="button" href="#popup">{{activity.facilityName}}</a>
 
           <span *ngIf="activity.favorite"><button (click)="addLikedActivity(activity)" class="megusta" style="float:right">♥</button></span>
 

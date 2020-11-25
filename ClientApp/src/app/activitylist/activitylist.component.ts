@@ -8,9 +8,9 @@ import { ActivityDataService } from '../services/activity-data.service';
   styleUrls: ['./activitylist.component.css']
 })
 export class ActivitylistComponent implements OnInit {
-
   activities: ActivityData[];
   uniqueActs: string[];
+  selectedActivity: ActivityData;
   
   constructor(private activitydataservice: ActivityDataService) {
     this.uniqueActs = [];
@@ -27,9 +27,10 @@ export class ActivitylistComponent implements OnInit {
       results => (this.uniqueActs = results));
   }
 
-  chooseActivity(activityName: string): void {
+  chooseActivity(activityName): void {
     this.activitydataservice.ChosenActivity = activityName;
     this.activitydataservice.populateList(activityName);
+    this.selectedActivity = activityName;
   }
 
 

@@ -14,6 +14,8 @@ import { AgmCoreModule } from '@agm/core';
 import { MapdisplayComponent } from './mapdisplay/mapdisplay.component';
 import { ActivitylistComponent } from './activitylist/activitylist.component';
 import { FacilitydescriptionComponent } from './facilitydescription/facilitydescription.component';
+import { FilterPipe } from './pipes/filter.pipe';
+import { SortPipe } from './pipes/sort.pipe';
 
 
 @NgModule({
@@ -26,7 +28,9 @@ import { FacilitydescriptionComponent } from './facilitydescription/facilitydesc
     FavoritesComponent,
     MapdisplayComponent,
     ActivitylistComponent,
-    FacilitydescriptionComponent
+    FacilitydescriptionComponent,
+    FilterPipe,
+    SortPipe
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -34,7 +38,7 @@ import { FacilitydescriptionComponent } from './facilitydescription/facilitydesc
     FormsModule,
     AppRoutingModule,
     AgmCoreModule.forRoot({
-      apiKey: ''
+      apiKey: 'AIzaSyDrhbSG8hl5VvTVQm5dq1kcOsE_thvjbjE'
      
     })
   ],
